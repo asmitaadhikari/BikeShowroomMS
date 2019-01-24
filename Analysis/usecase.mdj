@@ -2803,7 +2803,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "record coustomer data",
+											"text": "record customer data",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -2871,7 +2871,7 @@
 									"containerExtending": false,
 									"left": 551.5,
 									"top": 436.5,
-									"width": 150.87353515625,
+									"width": 150,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -5375,7 +5375,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Costomer",
+											"text": "Customer",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -13853,7 +13853,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFodGCH2W19v4g="
 					},
-					"name": "record coustomer data",
+					"name": "record customer data",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -14314,7 +14314,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFodGCH2W19v4g="
 					},
-					"name": "Costomer",
+					"name": "Customer",
 					"visibility": "public",
 					"isAbstract": false,
 					"isFinalSpecialization": false,

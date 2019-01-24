@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<link rel="stylesheet" href="css/bootstrap.css">
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+    <div class="form-container">
+        <div class="container">
+            <style>
+            .container{
+                box-shadow: 0px 0px 10px 3px grey;
+                margin-top: 10px;
+                width: 50%; 
+            }
+            </style>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="form-bg">
+                        <h2 class="text-center">Login</h2>
+                        <form method="post">
+                            <div class="form-group">
+                                <label class="control-label col-lg-4">User Name</label>
+                           <div class="col-lg-12">
+                               <input type="text" name="username" class="form-control" placeholder="Enter User Name" required/>
+                           </div>
+                            </div>
+                            <div class="form-group">
+                                    <label class="control-label col-lg-4">Password</label>
+                               <div class="col-lg-12">
+                                   <input type="password" name="password" class="form-control" placeholder="Enter Password" required/>
+                               </div>
+                                </div>
+                                
+                                <div class="form-group ">
+                               
+                                 <button class="btn btn-block btn-success"  name="Login"> Login</button>
+                                         <p style="text-align;">Don't Have a Account?? <a href="signup.php">Sign Up</a> </p>
+                                        <style>
+                                        .btn{
+                                            margin-top: 10vh;
+                                            margin-right: 20px;
+                                        }
+                                        </style>
+                                    </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
