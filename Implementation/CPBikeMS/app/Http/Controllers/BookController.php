@@ -55,7 +55,10 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        //
+        $user=auth()->user();
+		$booking=DB::table('booking')->join('product','product.productid','=','booking.productid')
+		->where('id',$user->id)->get();
+		return view('/booking',compact('booking'));
     }
 
     /**

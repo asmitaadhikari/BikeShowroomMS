@@ -240,7 +240,16 @@
                                     <tr>
                                     <td>{!!$key + 1 !!}</td>
                                        
-                                        <td class="tm-product-name">{!! $products->name !!}</td>
+                                        <td class="tm-product-name">{!! $products->name !!}
+                                        <a  style="color:red;" class="viewmore"  data-toggle="collapse" data-parent="#accordion" href="#{{ $products->productid}}"> View More</a>
+                                            
+                    <div id="{{$products->productid}}" class="panel-collapse collapse in">
+                    <h6>
+                   Gear:
+                    <label style="font-weight:400;">{!! $products->gear !!}</label>
+                    </h6>
+                    </div>
+                                         </td>
                                         <td class="tm-product-name">{!! $products->price!!}</td>
                                         <td class="tm-product-name">{!! $products->producttypename!!}</td>
                                         <td class="tm-product-name">{!! $products->cc!!}</td>
@@ -275,21 +284,8 @@
                         </div>
 
                         <div class="tm-table-mt tm-table-actions-row">
-                            <div class="tm-table-actions-col-left">
-                                <button class="btn btn-danger">Delete Selected Items</button>
-                            </div>
-                            <div class="tm-table-actions-col-right">
-                                <span class="tm-pagination-label">Page</span>
-                                <nav aria-label="Page navigation" class="d-inline-block">
-                                    <ul class="pagination tm-pagination">
-                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                         
-                                    </ul>
-                                </nav>
-                            </div>
+                           
+                            
                         </div>
                     </div>
                 </div>

@@ -1,11 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Motorbike</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Custom Theme files -->
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
@@ -17,23 +15,65 @@
 <script src="js/jquery-2.2.3.min.js"></script>  
 <!-- //js -->
 <!-- web-fonts -->
+
+
+<script src="Admin/js/jquery-3.3.1.min.js"></script>
+    <!-- https://jquery.com/download/ -->
+    <script src="Admin/js/bootstrap.min.js"></script>
+
+
 <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Arsenal:400,400i,700,700i" rel="stylesheet"> 
 <!-- //web-fonts --> 
-</head> 
-<body> 
+
+
+
 	<!-- banner -->
 	<div id="home" class="banner">
 		<div class="banner-agileinfo">
+		
 			<!-- header -->
-			<div class="header">
-				<div class="container">		
-					<div class="logo">
+			<div class="header col-md-12">
+				<div class="container col-md-12">		
+					<div class="logo col-md-12">
+						<div style="float:left;" class="col-md-8">
 						<h1><a href="index.html">Motorbike</a></h1>
+</div>
+						<div class="col-md-2 mt-2" style="float:left;">
+						<a class="nav-link" style="font-size:22px;color:#EA7686" href="{{ route('logout')}}" 
+                                    
+                                    onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> {{ Auth::user()->name }}</a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    {{@csrf_field()}}
+                                        <i class="far fa-user mr-2 tm-logout-icon"></i>
+                                        
+                                        <span>Logout</span>
+																		</a>
+</div>
 					</div> 
+
 					<div class="menu">
+						
+				
+
+
+<div class="agile_user_icons">
+						<ul class="agileits_user_list">
+									
+						<li class="nav-item">
+                
+                                </li>
+				
+						
+						</ul>
+						
+						</div>
 						<a href="" id="menuToggle"> <span class="navClosed"></span> </a>
+				
 						<nav>  
+					
+							
 							<a href="#home" class="active scroll">Home</a> 
 							<a href="#about" class="scroll">About</a>  
 							<a href="#services" class="scroll">Services</a>  
@@ -323,52 +363,3 @@
 			</div>
 		</div>
 	</div>
-	<!-- //footer -->	  
-	<!-- jarallax -->  
-	<script src="js/SmoothScroll.min.js"></script> 
-	<script src="js/jarallax.js"></script> 
-	<script type="text/javascript">
-		/* init Jarallax */
-		$('.jarallax').jarallax({
-			speed: 0.5,
-			imgWidth: 1366,
-			imgHeight: 768
-		})
-	</script>  
-	<!-- //jarallax -->   
-	<!-- start-smooth-scrolling -->
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>	
-	<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-			
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-				});
-			});
-	</script>
-	<!-- //end-smooth-scrolling -->	
-	<!-- smooth-scrolling-of-move-up -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-			/*
-			var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-			};
-			*/
-			
-			$().UItoTop({ easingType: 'easeOutQuart' });
-			
-		});
-	</script>
-	<!-- //smooth-scrolling-of-move-up -->  
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
-</body>
-</html>

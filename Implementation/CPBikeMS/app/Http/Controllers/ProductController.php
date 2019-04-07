@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use DB;
 use App\Productmodel;
 use App\ModelProductType;
+use App\user;
+use Auth;
 
 use Illuminate\Http\Request;
 
@@ -156,6 +158,22 @@ class ProductController extends Controller
         ->select('*')
         ->get()
         ->toArray();
-        return view('Category',compact('product','getproduct')); 
+        return view('ProductCategory',compact('product','getproduct')); 
+    }
+
+    public function description($id)
+    {
+        $product=DB::table('productcat')//table with fk
+        ->select('productcat.*')//from db
+        ->get();
+
+        $getproduct = DB::table('product') //product table
+        ->join('productcat','productcat.producttypeid','=','product.producttypeid')
+        ->select('*')
+        ->where('product.productid',$id)
+        
+        ->get()
+        ->toArray();
+        return view('Description',compact('product','getproduct')); 
     }
 }

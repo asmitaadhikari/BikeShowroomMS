@@ -5,17 +5,17 @@
 <meta charset="utf-8">
 
 
-<link rel="stylesheet" type="text/css" href="Cart/styles/bootstrap-4.1.2/bootstrap.min.css">
-<link href="Cart/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="Cart/styles/cart.css">
-<link rel="stylesheet" type="text/css" href="Cart/styles/cart_responsive.css">
+<link rel="stylesheet" type="text/css" href="{{asset('Cart/styles/bootstrap-4.1.2/bootstrap.min.css') }}">
+<link href="{{asset('Cart/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{{asset('Cart/styles/cart.css') }}">
+<link rel="stylesheet" type="text/css" href="{{asset('Cart/styles/cart_responsive.css') }}">
 
-cript type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Custom Theme files -->
-<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-<link href="css/specification.css" type="text/css" rel="stylesheet" media="all"> 
-<link href="css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons -->
-<link rel="stylesheet" href="css/lightbox.css">
+<link href="{{asset('css/bootstrap.css') }}" type="text/css" rel="stylesheet" media="all">
+<link href="{{asset('css/specification.css') }}" type="text/css" rel="stylesheet" media="all"> 
+<link href="{{asset('css/font-awesome.css') }}" rel="stylesheet"> <!-- font-awesome icons -->
+<link rel="stylesheet" href="{{asset('css/lightbox.css') }}">
 <!--//Custom Theme files-->
 <!-- js -->
 <script src="js/jquery-2.2.3.min.js"></script>  
@@ -103,10 +103,12 @@ cript type="application/x-javascript"> addEventListener("load", function() { set
 									<li>Item Type</li>
 									<li>Price</li>
 									<li>Image</li>
-									
 									<li>Total</li>
 								</ul>
 							</div>
+							@if($booking->count()>0)
+                @foreach($booking as $bookings)
+
 
 							<!-- Cart Items -->
 							<div class="cart_items">
@@ -116,13 +118,13 @@ cript type="application/x-javascript"> addEventListener("load", function() { set
 									<li class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-end justify-content-start">
 										<div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto">
 											<div><div class="product_number"></div></div>
-											<div><div class="product_image"><img src="images/" alt=""></div></div>
+											<div><div class="product_image"><img src="/{{ $booking->img}}"  style="height:100px; width:100px;"></div></div>
 											<div class="product_name_container">
 												<div class="product_name"><a href="product.html"></a></div>
 												<div class="product_text"></div>
 											</div>
 										</div>
-										<div class="product_color product_text"><span>Color: </span></div>
+										<div class="product_color product_text"><span>{!! $booking->name !!} </span></div>
 										<div class="product_size product_text"><span>Size: </span></div>
 										<div class="product_price product_text"><span>Price: </span></div>
 										<div class="product_quantity_container">
@@ -132,7 +134,12 @@ cript type="application/x-javascript"> addEventListener("load", function() { set
 									</li>
 								</ul>
 							</div>
-
+							@endforeach
+         @else
+         
+         <h1 class="text-center">Your cart is empty !!</h1>
+         
+         @endif
 							<!-- Cart Buttons -->
 							<div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
 								<div class="cart_buttons_inner ml-sm-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
@@ -150,17 +157,17 @@ cript type="application/x-javascript"> addEventListener("load", function() { set
 						<!-- Footer Contact -->
 					
 
-<script src="Cart/js/jquery-3.2.1.min.js"></script>
-<script src="Cart/styles/bootstrap-4.1.2/popper.js"></script>
-<script src="Cart/styles/bootstrap-4.1.2/bootstrap.min.js"></script>
-<script src="Cart/plugins/greensock/TweenMax.min.js"></script>
-<script src="Cart/plugins/greensock/TimelineMax.min.js"></script>
-<script src="Cart/plugins/scrollmagic/ScrollMagic.min.js"></script>
-<script src="Cart/plugins/greensock/animation.gsap.min.js"></script>
-<script src="Cart/plugins/greensock/ScrollToPlugin.min.js"></script>
-<script src="Cart/plugins/easing/easing.js"></script>
-<script src="Cart/plugins/parallax-js-master/parallax.min.js"></script>
-<script src="Cart/js/cart.js"></script>
+<script src="{{asset('Cart/js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{asset('Cart/styles/bootstrap-4.1.2/popper.js') }}"></script>
+<script src="{{asset('Cart/styles/bootstrap-4.1.2/bootstrap.min.js') }}"></script>
+<script src="{{asset('Cart/plugins/greensock/TweenMax.min.js') }}"></script>
+<script src="{{asset('Cart/plugins/greensock/TimelineMax.min.js') }}"></script>
+<script src="{{asset('Cart/plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
+<script src="{{asset('Cart/plugins/greensock/animation.gsap.min.js') }}"></script>
+<script src="{{asset('Cart/plugins/greensock/ScrollToPlugin.min.js') }}"></script>
+<script src="{{asset('Cart/plugins/easing/easing.js') }}"></script>
+<script src="{{asset('Cart/plugins/parallax-js-master/parallax.min.js') }}"></script>
+<script src="{{asset('Cart/js/cart.js') }}"></script>
 
 
 

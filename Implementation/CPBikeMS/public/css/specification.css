@@ -534,15 +534,18 @@ h3.agileits-title.w3title2 {
 /*-- //news --*/
 /*-- specifications --*/ 
 .spec {
-    background:url(../images/1.jpg)no-repeat center;
+    background:url(../images/)no-repeat center;
     background-size: cover !important; 
 }
 .spec h3.agileits-title.w3title2 {
-    color: #fff;
+    color: black;
 }
 .specw3-agileits {
     background: rgba(0, 0, 0, 0.65);
-    padding: 5em 0;
+    padding: 2em 0;
+    margin-left: -65vh;
+    margin-right: 15vh;
+    margin-top: 35vh;
 }
 .spec-grids {
     padding: 0 5em;

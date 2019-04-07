@@ -37,7 +37,7 @@ class LoginController extends Controller
             break;
             
             default:
-            return 'welcome';
+            return '/welcome';
             break;
              }
     }

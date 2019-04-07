@@ -774,6 +774,36 @@ h3.agileits-title.w3title2 {
 	color:#3b5998;
 	background:transparent !important; 
 }
+
+.agileits_user_list li {
+    display: inline-block;
+    margin: 0 0.1em;
+}
+.agileits_user_list li a {
+    color: #ea7686;
+    text-align: center;
+    display: inline-block;
+    font-size: 1em;
+    float: right;
+    background-color:transparent;
+    border: none;
+    padding: .4em 0;
+    margin-left: 137vh;
+    margin-top: -12vh;
+    padding: 10px;
+    width: 42px;
+    height: 42px;
+    text-decoration: none;
+    font-size: 35px;
+} 
+.agileits_user_list li a:hover{
+	color:white;
+	background:transparent !important; 
+}
+
+
+
+
 .agileits_social_list li a.agile_twitter{ 
 	background:#1da1f2;
 	border-color:#1da1f2;

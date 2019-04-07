@@ -12,9 +12,13 @@
 */
 
 Route::get('/', function () {
+    return view('welcome2');
+});
+
+//Admin Parts
+Route::get('/welcome', function() {
     return view('welcome');
 });
-//Admin Parts
 Route::get('/admindashboard', function() {
     return view('Admin.admindashboard');
 });
@@ -24,10 +28,17 @@ Route::get('/products', function() {
 Route::get('/Booking', function() {
     return view('Booking');
 });
+Route::get('/editprofile', function() {
+    return view('editprofile');
+});
+
  //from User Dashboard
-//  Route::get('/Category', function() {
-//     return view('Category');
- Route::get('/Category','ProductController@category');
+
+
+
+ Route::get('/ProductCategory','ProductController@category');
+ 
+ Route::get('/Description/{id}','ProductController@description');
 
 Auth::routes();
 
@@ -54,3 +65,6 @@ Route::get ('/InsertProductCategory','ProductTypeController@index');
 
 
 route::post('/Insertproduct','ProductController@store');
+
+
+Route::put('/Booking/{id}','BookController@show');
