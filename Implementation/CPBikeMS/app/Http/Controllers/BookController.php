@@ -44,7 +44,7 @@ class BookController extends Controller
         $book->id=$request->userid;
         $book->productid=$request->productid;
         $book->save();
-        return redirect()->to ('/Category')->with('booking Success','Booking is Done'); 
+        return redirect()->to ('/Booking')->with('booking Success','Booking is Done'); 
     }
 
     /**
@@ -53,11 +53,11 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         $user=auth()->user();
 		$booking=DB::table('booking')->join('product','product.productid','=','booking.productid')
-		->where('id',$user->id)->get();
+		->where('id','=',$user->id)->get();
 		return view('/booking',compact('booking'));
     }
 

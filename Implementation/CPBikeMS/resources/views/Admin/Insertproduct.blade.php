@@ -258,6 +258,7 @@
                                         <td> 
                                         <form action="{{url('/Insertproduct',$products->productid)}}" method="POST">
 		                                    {{ csrf_field() }} 
+   
                                             {!! method_field('DELETE') !!}
                                                 <button class="btn btn-primary btn-lg" type="submit" >
                                                 <i class="fas fa-trash-alt tm-trash-icon"></i>

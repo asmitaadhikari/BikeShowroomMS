@@ -118,17 +118,20 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <form action="" class="tm-signup-form" method="POST" action="{{url('/Admin/InsertProductCategory')}}">
-                {{ csrf_field() }}
+                            <form action="" class="tm-signup-form" method="POST" >
+                
                                 <div class="form-group">
                                     <label for="name"> Product Name</label>
-                                    <input placeholder="Enter Product Name" id="name" name="p_type" type="text" class="form-control validate">
+                                   
+                                    <input type="text" placeholder="Enter Product Name"id="name" name="p_type" type="text" class="form-control validate">
+                                   
                                 </div>
                                
                                 <div class="row">
                                     <div class="col-12 col-sm-4">
                                         <button type="submit" class="btn btn-primary">Insert
-                                        </button>
+                                        </button> <br> <br>
+                                       
                                     </div>
                                  
                                 </div>
@@ -145,6 +148,7 @@
                 </div>
             </div>
         </div>
+        <form action="{{url('/Admin/InsertProductCategory')}}">
         <div class="row tm-content-row tm-mt-big">
                 <div class="col-xl-8 col-lg-12 tm-md-12 tm-sm-12 tm-col">
                     <div class="bg-white tm-block h-100">
@@ -163,7 +167,7 @@
                                     <tr class="tm-bg-gray">
                                     <th scope="col">S No.</th>
                                         <th scope="col">Product Name</th>
-                                        
+                                        <th scope="col">Control</th>
                                         <th scope="col">&nbsp;</th>
                                     </tr>
                                 </thead>
@@ -174,8 +178,10 @@
                                     <td>{!!$key + 1 !!}</td>
                                        
                                         <td class="tm-product-name">{!! $products->producttypename !!}</td>
-                                     
-                                      
+                                       <td>
+                                       <a href="/EditProductCategory/{{$products->producttypeid}}"
+                                       class="tm-product-name">Edit
+                                       </a>  
                                  
                                     </tr>
                                    
@@ -192,6 +198,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        </form>
 
         <footer class="row tm-mt-small">
             <div class="col-12 font-weight-light">

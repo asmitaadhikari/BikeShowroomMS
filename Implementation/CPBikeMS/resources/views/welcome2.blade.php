@@ -1,352 +1,472 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Motorbike</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- Custom Theme files -->
-<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-<link href="css/style.css" type="text/css" rel="stylesheet" media="all"> 
-<link href="css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons -->
-<link rel="stylesheet" href="css/lightbox.css">
-<!--//Custom Theme files-->
-<!-- js -->
-<script src="js/jquery-2.2.3.min.js"></script>  
-<!-- //js -->
-<!-- web-fonts -->
+<html lang="zxx">
+   <head>
+      <title>Motorbike</title>
+      <!--meta tags -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+      <script>
+         addEventListener("load", function () {
+         	setTimeout(hideURLbar, 0);
+         }, false);
+         
+         function hideURLbar() {
+         	window.scrollTo(0, 1);
+         }
+      </script>
+      <!--//meta tags ends here-->
+      <!--booststrap-->
+      <link href="Index/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+      <!--//booststrap end-->
+      <!-- font-awesome icons -->
+      <link href="Index/css/fontawesome-all.min.css" rel="stylesheet" type="text/css" media="all">
+      <!-- //font-awesome icons -->
+      <!-- For Clients slider -->
+      <link rel="stylesheet" href="Index/css/flexslider.css" type="text/css" media="all" />
+      <!--flexs slider-->
+      <link href="Index/css/JiSlider.css" rel="stylesheet">
+      <!--Shoping cart-->
+      <link rel="stylesheet" href="Index/css/shop.css" type="text/css" />
+      <!--//Shoping cart-->
+      <!--stylesheets-->
+      <link href="Index/css/style.css" rel='stylesheet' type='text/css' media="all">
+      <!--//stylesheets-->
+      <link href="//fonts.googleapis.com/css?family=Sunflower:500,700" rel="stylesheet">
+      <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+   </head>
+   <body>
+      <div class="header-outs" id="home">
+         <div class="header-bar">
+            <div class="info-top-grid">
+               <div class="info-contact-agile">
+                  <ul>
+                     <li>
+                        <span class="fas fa-phone-volume"></span>
+                        <p>+977 9843045363</p>
+                     </li>
+                     <li>
+                        <span class="fas fa-envelope"></span>
+                        <p><a href="mailto:info@example.com">MotorBike@gmail.com</a></p>
+                     </li>
+                     <li>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="container-fluid">
+               <div class="hedder-up row">
+                  <div class="col-lg-3 col-md-3 logo-head">
+                     <h1><a class="navbar-brand" href="index.html">Bike-Shop</a></h1>
+                  </div>
+                  <div class="col-lg-5 col-md-6 search-right">
+                     <form class="form-inline my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                        <button class="btn" type="submit">Search</button>
+                     </form>
+                  </div>
+                  <div class="col-lg-4 col-md-3 right-side-cart">
+                     <div class="cart-icons">
+                        <ul>
+                          
+                           <li>
+                              <button type="button" data-toggle="modal" data-target="#exampleModal"> <span class="far fa-user"></span></button>
+                           </li>
+                           <li class="toyscart toyscart2 cart cart box_1">
+                              <form action="#" method="post" class="last">
+                                 <input type="hidden" name="cmd" value="_cart">
+                                 <input type="hidden" name="display" value="1">
+                                 <button class="top_toys_cart" type="submit" name="submit" value="">
+                                 <span class="fas fa-cart-arrow-down"></span>
+                                 </button>
+                              </form>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light">
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                  <ul class="navbar-nav ">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="/About" class="nav-link">About</a>
+                     </li>
+                  
+                     <li class="nav-item">
+                        <a href="/ProductCategory" class="nav-link">Shop Now</a>
+                     </li>
+                    
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Product
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                           <a class="nav-link" href="/ProductCategory">Bikes</a>
+                           <a class="nav-link " href="/ProductCategory">Scooters</a>
+                           <a class="nav-link " href="/ProductCategory">Old&used</a>
+                           
+                        </div>
+                     </li>
+                     <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+         <!-- Slideshow 4 -->
+         <div class="slider text-center">
+            <div class="callbacks_container">
+               <ul class="rslides" id="slider4">
+                  <li>
+                     <div class="slider-img one-img">
+                        <div class="container">
+                           <div class="slider-info ">
+                              <h5>We offer best <br>Motorbike</h5>
+                              <div class="bottom-info">
+                               
+                              </div>
+                              <div class="outs_more-buttn">
+                                 <a href="/About">Read More</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     <div class="slider-img two-img">
+                        <div class="container">
+                           <div class="slider-info ">
+                              <h5>Choose your <br>desired bike</h5>
+                              <div class="bottom-info">
+                               
+                              </div>
+                              <div class="outs_more-buttn">
+                                 <a href="/About">Read More</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     <div class="slider-img three-img">
+                        <div class="container">
+                           <div class="slider-info">
+                              <h5>Reasonable price</h5>
+                              <div class="bottom-info">
+                                 
+                              </div>
+                              <div class="outs_more-buttn">
+                                 <a href="/About">Read More</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+            <!-- This is here just to demonstrate the callbacks -->
+            <!-- <ul class="events">
+               <li>Example 4 callback events</li>
+               </ul>-->
+            <div class="clearfix"></div>
+         </div>
+      </div>
+      <!-- //banner -->
+      <!-- about -->
 
 
-<script src="Admin/js/jquery-3.3.1.min.js"></script>
-    <!-- https://jquery.com/download/ -->
-    <script src="Admin/js/bootstrap.min.js"></script>
+
+      
+      <!-- //about -->
+      <!--new Arrivals -->
+      <!--//about -->
+     
+      <!-- Product-view -->
+      <section class="product py-lg-4 py-md-3 py-sm-3 py-3">
+         <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
+            <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Latest Bikes</h3>
+            <div class=" img-toy-w3l-top">
+            </div>
+            <div class="mt-lg-4 mt-3 product-info-img">
+               <p>velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+                  velit sagittis vehicula. Duis posuere 
+               </p>
+               <div class="clients_more-buttn">
+                  <a href="shop.html">Shop Now</a>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6 img-toy-w3l-left">
+                  <div class="toys-img-one">
+                  </div>
+                  <div class="mt-lg-4 mt-3 product-info-img">
+                     <p>velit sagittis vehicula. Duis posuere 
+                        ex in mollis iaculis. Suspendisse tincidunt
+                        velit sagittis vehicula. Duis posuere 
+                        velit sagittis vehicula. Duis posuere 
+                     </p>
+                     <div class="clients_more-buttn">
+                        <a href="shop.html">Shop Now</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-6 img-toy-agile-right">
+                  <div class="toys-img-one-two">
+                  </div>
+                  <div class="mt-lg-4 mt-3 product-info-img">
+                     <p>velit sagittis vehicula. Duis posuere 
+                        ex in mollis iaculis. Suspendisse tincidunt
+                        velit sagittis vehicula. Duis posuere 
+                        velit sagittis vehicula. Duis posuere 
+                     </p>
+                     <div class="clients_more-buttn">
+                        <a href="shop.html">Shop Now</a>
+                     </div>
+                  </div>
+                  <div class="toys-img-one-three">
+                  </div>
+                  <div class="mt-lg-4 mt-3 product-info-img">
+                     <p>velit sagittis vehicula. Duis posuere 
+                        ex in mollis iaculis. Suspendisse tincidunt
+                        velit sagittis vehicula. Duis posuere 
+                        velit sagittis vehicula. Duis posuere 
+                     </p>
+                     <div class="clients_more-buttn">
+                        <a href="shop.html">Shop Now</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--//Product-view-->
+      <!--//Product-view-->
+    
 
 
-<link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Arsenal:400,400i,700,700i" rel="stylesheet"> 
-<!-- //web-fonts --> 
-
-
-
-	<!-- banner -->
-	<div id="home" class="banner">
-		<div class="banner-agileinfo">
-		
-			<!-- header -->
-			<div class="header">
-				<div class="container">		
-					<div class="logo">
-						<h1><a href="index.html">Motorbike</a></h1>
-					</div> 
-
-					<div class="menu">
-						
-					
-
-
-<div class="agile_user_icons">
-						<ul class="agileits_user_list">
-									
-						<li class="nav-item">
-                                    <a class="nav-link fa fa-user" href="{{ url('/login')}}">
-                                    </a>
-                                </li>
-				
-						
-						</ul>
-						
-						</div>
-						<a href="" id="menuToggle"> <span class="navClosed"></span> </a>
-				
-						<nav>  
-					
-							
-							<a href="#home" class="active scroll">Home</a> 
-							<a href="#about" class="scroll">About</a>  
-							<a href="#services" class="scroll">Services</a>  
-							
-							<a href="/Category" >Category</a> 
-							<a href="#gallery" class="scroll">Gallery</a> 
-							<a href="#contact" class="scroll">Contact</a> 
-						</nav>
-						<script>
-						(function($){
-							// Menu Functions
-							$(document).ready(function(){
-							$('#menuToggle').click(function(e){
-								var $parent = $(this).parent('.menu');
-							  $parent.toggleClass("open");
-							  var navState = $parent.hasClass('open') ? "hide" : "show";
-							  $(this).attr("title", navState + " navigation");
-									// Set the timeout to the animation length in the CSS.
-									setTimeout(function(){
-										console.log("timeout set");
-										$('#menuToggle > span').toggleClass("navClosed").toggleClass("navOpen");
-									}, 200);
-								e.preventDefault();
-							});
-						  });
-						})(jQuery);
-						</script>
-		 
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<!-- //header -->
-			<div class="banner-text">
-				<div class="container">		
-					<h2>WE OFFER THE BEST <span>MOTORBIKES</span></h2>
-					<a href="#about" class="buy btn-wayra scroll"> More About</a>
-				</div> 
-			</div>
-		</div>
-	</div>
-
-	<!-- services -->
-	<div id="services" class="services">
-		<div class="container"> 
-			<h3 class="agileits-title w3title2"><span>S</span>ervices</h3>
-			<div class="services-row-agileinfo">
-				<div class="col-sm-4 col-xs-6 services-w3grid">
-					<span class="fa fa-heart hi-icon" aria-hidden="true"></span>
-					<h5>Cum soluta nobis</h5>
-					<p>Itaque earum rerum hic a sapiente delectus finibus gravida</p>
-				</div>
-				<div class="col-sm-4 col-xs-6 services-w3grid">
-					<span class="fa fa-wrench hi-icon" aria-hidden="true"></span>
-					<h5>Soluta vum nobis</h5>
-					<p>Itaque earum rerum hic a sapiente delectus finibus gravida</p>
-				</div>
-				<div class="col-sm-4 col-xs-6 services-w3grid">
-					<span class="fa fa-bell hi-icon" aria-hidden="true"></span>
-					<h5>Nobis cum soluta</h5>
-					<p>Itaque earum rerum hic a sapiente delectus finibus gravida</p>
-				</div> 
-				<div class="col-sm-4 col-xs-6 services-w3grid">
-					<span class="fa fa-motorcycle hi-icon" aria-hidden="true"></span>
-					<h5>Cum soluta nobis</h5>
-					<p>Itaque earum rerum hic a sapiente delectus finibus gravida</p>
-				</div>
-				<div class="col-sm-4 col-xs-6 services-w3grid">
-					<span class="fa fa-check-square-o hi-icon" aria-hidden="true"></span>
-					<h5>Soluta vum nobis</h5>
-					<p>Itaque earum rerum hic a sapiente delectus finibus gravida</p>
-				</div>
-				<div class="col-sm-4 col-xs-6 services-w3grid">
-					<span class="fa fa-gears hi-icon" aria-hidden="true"></span>
-					<h5>Nobis cum soluta</h5>
-					<p>Itaque earum rerum hic a sapiente delectus finibus gravida</p>
-				</div> 
-				<div class="clearfix"> </div>
-			</div> 
+      <!--Product-about-->
+      <section class="about py-lg-4 py-md-3 py-sm-3 py-3">
+         <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
+            <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">About Toys</h3>
+            <div class="about-products-w3layouts">
+               <p>velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+                  velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+               </p>
+               <p class="my-lg-4 my-md-3 my-3">velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+                  velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+               </p>
+               <p>velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+                  velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+               </p>
+            </div>
+         </div>
+      </section>
+      <!--//Product-about-->
+      <!--subscribe-address-->
+      <section class="subscribe">
+         <div class="container-fluid">
+         <div class="row">
+            <div class="col-lg-6 col-md-6 map-info-right px-0">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3150859.767904157!2d-96.62081048651531!3d39.536794757966845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1408111832978"> </iframe>
+            </div>
+            <div class="col-lg-6 col-md-6 address-w3l-right text-center">
+               <div class="address-gried ">
+                  <span class="far fa-map"></span>
+                  <p>25478 Road St.121<br>USA New Hill
+                  <p>
+               </div>
+               <div class="address-gried mt-3">
+                  <span class="fas fa-phone-volume"></span>
+                  <p> +(000)123 4565<br>+(010)123 4565</p>
+               </div>
+               <div class=" address-gried mt-3">
+                  <span class="far fa-envelope"></span>
+                  <p><a href="mailto:info@example.com">info@example1.com</a>
+                     <br><a href="mailto:info@example.com">info@example2.com</a>
+                  </p>
+               </div>
+            </div>
+         </div>
 		 </div>
-	</div>
-	<!-- //services -->
-	<!-- //banner -->
-	<!-- welcome -->	
-	
-	<!-- //welcome -->	
-	<!-- slid -->
-	<!-- //specifications -->
-	<!-- news -->
-	<div id="news" class="news">   
-		<div class="container"> 
-			<h3 class="agileits-title w3title2"><span>C</span>ategory </h3>
-			<div class="news-agileinfo">
-				<div class="col-md-4 news-w3grid">
-					<img src="images/img2.jpg" alt="">
-					<div class="news-w3grid-info">
-						<h5><span>10</span> April </h5>
-						<h4>Donec cursus</h4>
-						<p>Etiam ex lorem cursus vitae placerat suscipit dapibus tortor sed nec augue</p>
-						<div class="article-links">
-							<ul>
-								<li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>1,052</span></a></li>
-								<li><a href="#"><i class="glyphicon glyphicon-comment"></i><span>10K</span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 news-w3grid">
-					<img src="images/img3.jpg" alt="">
-					<div class="news-w3grid-info">
-						<h5><span>15</span> April </h5>
-						<h4>Suscipit dapib</h4>
-						<p>Lorem cursus vitae placerat etiam ex suscipit dapibus tortor sed nec augue</p>
-						<div class="article-links">
-							<ul>
-								<li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>1,052</span></a></li>
-								<li><a href="#"><i class="glyphicon glyphicon-comment"></i><span>10K</span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 news-w3grid">
-					<img src="images/img4.jpg" alt="">
-					<div class="news-w3grid-info">
-						<h5><span>18</span> April </h5>
-						<h4>Tortor sed</h4>
-						<p>Etiam ex lorem cursus vitae placerat suscipit dapibus tortor sed nec augue</p>
-						<div class="article-links">
-							<ul>
-								<li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>1,052</span></a></li>
-								<li><a href="#"><i class="glyphicon glyphicon-comment"></i><span>10K</span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div> 
-		</div> 
-	</div>
-	<!-- //news --> 
-	<!-- gallery -->
-	<div class="gallery" id="gallery">	 
-		<h3 class="agileits-title w3title2"><span>G</span>allery</h3>
-		<div class="gallery-info">	
-			<div class="col-sm-6 gallery-grids glry-grid1">
-				<div class="gallery-grids-top">
-					<a class="b-link-stripe b-animate-go" href="images/g3.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen book It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ">
-						<img src="images/g3.jpg" class="img-responsive" alt=""/>
-						<div class="b-wrapper">
-							<span class="b-animate b-from-left"> 
-								<i class="fa fa-arrows-alt" aria-hidden="true"></i>
-							</span>					
-						</div>
-					</a>
-				</div>
-				<div class="gallery-grids-top">
-					<div class="col-sm-6 col-xs-6 bottom-grids">
-						<a class="b-link-stripe b-animate-go" href="images/img2.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen book It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ">
-							<img src="images/img2.jpg" class="img-responsive" alt=""/>
-							<div class="b-wrapper">
-								<span class="b-animate b-from-left">
-									<i class="fa fa-arrows-alt" aria-hidden="true"></i>
-								</span>					
-							</div>
-						</a>
-					</div>
-					<div class="col-sm-6 col-xs-6 bottom-grids">
-						<a class="b-link-stripe b-animate-go" href="images/img4.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen book It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ">
-							<img src="images/img4.jpg" class="img-responsive" alt=""/>
-							<div class="b-wrapper">
-								<span class="b-animate b-from-left">
-									<i class="fa fa-arrows-alt" aria-hidden="true"></i>
-								</span>					
-							</div>
-						</a>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-			<div class="col-sm-3 col-xs-6 gallery-grids glry-grid2">
-				<a class="b-link-stripe b-animate-go" href="images/g2.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen book It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ">
-					<img src="images/g2.jpg" class="img-responsive" alt=""/>
-					<div class="b-wrapper">
-						<span class="b-animate b-from-left">
-							<i class="fa fa-arrows-alt" aria-hidden="true"></i>
-						</span>					
-					</div>
-				</a>
-			</div>
-			<div class="col-sm-3 col-xs-6 gallery-grids glry-grid3">
-				<a class="b-link-stripe b-animate-go" href="images/g1.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen book It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ">
-					<img src="images/g1.jpg" class="img-responsive" alt=""/>
-					<div class="b-wrapper">
-						<span class="b-animate b-from-left">
-							<i class="fa fa-arrows-alt" aria-hidden="true"></i>
-						</span>					
-					</div>
-				</a>
-				<a class="b-link-stripe b-animate-go" href="images/img1.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen book It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ">
-					<img src="images/img1.jpg" class="img-responsive" alt=""/>
-					<div class="b-wrapper">
-						<span class="b-animate b-from-left">
-							<i class="fa fa-arrows-alt" aria-hidden="true"></i>
-						</span>					
-					</div>
-				</a>
-			</div>
-			<div class="clearfix"></div>
-			<script src="js/lightbox-plus-jquery.min.js"> </script>
-		</div>
-	</div>
-	<!-- //gallery -->
-	<!-- contact -->
-	<div class="contact" id="contact">
-		<div class="container"> 
-			<h3 class="agileits-title w3title2"><span>C</span>ontact Us</h3>
-			<div class="contact-grids">
-				<div class="col-md-5 address">
-					<h4>Get in touch with us</h4>
-					<p class="cnt-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit,sheets containing Lorem Ipsum passages sed do </p>
-					<div class="agile_social_icons">
-						<ul class="agileits_social_list">
-							<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							<li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-							<li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>  
-					<p>Kathmandu Nepal </p>
-					<p>Telephone : +977 9843045363</p>
-				
-					<p>Email : <a href="mailto:example@mail.com">asmitaadhikari62@gmail.com</a></p>
-				</div>
-				<div class="col-md-7 contact-form">
-					<form action="#" method="post">
-						<input type="text" name="Name" placeholder="Name" required="">
-						<input type="email" class="email" name="Email" placeholder="Email" required="">
-						<textarea placeholder="Message" name="Message" required=""></textarea>
-						<input type="submit" value="SUBMIT">
-					</form>
-				</div>
-				<div class="clearfix"> </div>	
-			</div>
-			<div class="w3-agilemap">  
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.9940307!3d40.719109700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1441710758555"></iframe>
-			</div> 
-		</div>
-	</div>
-	<!-- //contact --> 
-	<!-- footer -->
-	<div class="footer">
-		<div class="container"> 
-			<div class="footer-w3lsrow">
-				<div class="col-md-4 footer-grids footer-address">
-					<h3>Contact Us :</h3>
-					<ul>
-						<li><i class="glyphicon glyphicon-send"></i> <span> Kathmandu Nepal </span></li>
-						<li><i class="glyphicon glyphicon-phone"></i> +977 9846045363 <span>  </span></li>
-						<li><i class="glyphicon glyphicon-envelope"></i> <a href="mailto:example@mail.com"> asmitaadhikari62@gmail.com</a></li>
-					</ul>
-				</div>
-				<div class="col-md-4 footer-grids subscribe">
-					<h3>Newsletter :</h3> 
-					<form action="#" method="post">
-						<input type="email" name="Email" placeholder="Your Email" required="">
-						<input type="submit" value="Subscribe">
-						<div class="clearfix"> </div> 
-					</form>
-					
-				</div>
-				<div class="col-md-4 footer-grids footer-icons">
-					<h3>Follow Us :</h3>
-					<div class="agile_social_icons">
-						<ul class="agileits_social_list">
-							<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							<li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-							<li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>  
-					<div class="clearfix"> </div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="footer-bottom">
-				<p>© 2019 Motorbike. All rights reserved | Design by Asmita Adhikari.</a></p>
-			</div>
-		</div>
-	</div>
+      </section>
+
+
+
+
+
+
+      <!--//subscribe-address-->
+      <section class="sub-below-address py-lg-4 py-md-3 py-sm-3 py-3">
+         <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
+            <h3 class="title clr text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Get In Touch Us</h3>
+            <div class="icons mt-4 text-center">
+               <ul>
+                  <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                  <li><a href="#"><span class="fas fa-envelope"></span></a></li>
+                  <li><a href="#"><span class="fas fa-rss"></span></a></li>
+                  <li><a href="#"><span class="fab fa-vk"></span></a></li>
+               </ul>
+               <p class="my-3">velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+                  velit sagittis vehicula. Duis posuere 
+               </p>
+            </div>
+            <div class="email-sub-agile">
+               <form action="#" method="post">
+                  <div class="form-group sub-info-mail">
+                     <input type="email" class="form-control email-sub-agile" placeholder="Email">
+                  </div>
+                  <div class="text-center">
+                     <button type="submit" class="btn subscrib-btnn">Subscribe</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </section>
+      <!--//subscribe-->
+      <!-- footer -->
+      <footer class="py-lg-4 py-md-3 py-sm-3 py-3 text-center">
+         <div class="copy-agile-right">
+            <p> 
+               © 2019 Motorbike. All Rights Reserved | Design by  <a href="http://www.W3Layouts.com" target="_blank">Asmita Adhikari</a>
+            </p>
+         </div>
+      </footer>
+      <!-- //footer -->
+      <!-- Modal 1-->
+  
+      <!-- //Modal 1-->
+      <!--js working-->
+      <script src='Index/js/jquery-2.2.3.min.js'></script>
+      <!--//js working-->
+      <!-- cart-js -->
+      <script src="Index/js/minicart.js"></script>
+      <script>
+         toys.render();
+         
+         toys.cart.on('toys_checkout', function (evt) {
+         	var items, len, i;
+         
+         	if (this.subtotal() > 0) {
+         		items = this.items();
+         
+         		for (i = 0, len = items.length; i < len; i++) {}
+         	}
+         });
+      </script>
+      <!-- //cart-js -->
+      <!--responsiveslides banner-->
+      <script src="Index/js/responsiveslides.min.js"></script>
+      <script>
+         // You can also use "$(window).load(function() {"
+         $(function () {
+         	// Slideshow 4
+         	$("#slider4").responsiveSlides({
+         		auto: true,
+         		pager:false,
+         		nav:true ,
+         		speed: 900,
+         		namespace: "callbacks",
+         		before: function () {
+         			$('.events').append("<li>before event fired.</li>");
+         		},
+         		after: function () {
+         			$('.events').append("<li>after event fired.</li>");
+         		}
+         	});
+         
+         });
+      </script>
+      <!--// responsiveslides banner-->	 
+      <!--slider flexisel -->
+      <script src="Index/js/jquery.flexisel.js"></script>
+      <script>
+         $(window).load(function() {
+         	$("#flexiselDemo1").flexisel({
+         		visibleItems: 3,
+         		animationSpeed: 3000,
+         		autoPlay:true,
+         		autoPlaySpeed: 2000,    		
+         		pauseOnHover: true,
+         		enableResponsiveBreakpoints: true,
+         		responsiveBreakpoints: { 
+         			portrait: { 
+         				changePoint:480,
+         				visibleItems: 1
+         			}, 
+         			landscape: { 
+         				changePoint:640,
+         				visibleItems:2
+         			},
+         			tablet: { 
+         				changePoint:768,
+         				visibleItems: 2
+         			}
+         		}
+         	});
+         	
+         });
+      </script>
+      <!-- //slider flexisel -->
+      <!-- start-smoth-scrolling -->
+      <script src="Index/js/move-top.js"></script>
+      <script src="Index/js/easing.js"></script>
+      <script>
+         jQuery(document).ready(function ($) {
+         	$(".scroll").click(function (event) {
+         		event.preventDefault();
+         		$('html,body').animate({
+         			scrollTop: $(this.hash).offset().top
+         		}, 900);
+         	});
+         });
+      </script>
+      <!-- start-smoth-scrolling -->
+      <!-- here stars scrolling icon -->
+      <script>
+         $(document).ready(function () {
+         
+         	var defaults = {
+         		containerID: 'toTop', // fading element id
+         		containerHoverID: 'toTopHover', // fading element hover id
+         		scrollSpeed: 1200,
+         		easingType: 'linear'
+         	};
+         	$().UItoTop({
+         		easingType: 'easeOutQuart'
+         	});
+         
+         });
+      </script>
+      <!-- //here ends scrolling icon -->
+      <!--bootstrap working-->
+      <script src="Index/js/bootstrap.min.js"></script>
+      <!-- //bootstrap working-->
+   </body>
+</html>

@@ -15,30 +15,17 @@ Route::get('/', function () {
     return view('welcome2');
 });
 
-//Admin Parts
-Route::get('/welcome', function() {
-    return view('welcome');
-});
-Route::get('/admindashboard', function() {
-    return view('Admin.admindashboard');
-});
-Route::get('/products', function() {
-    return view('Admin.products');
-});
-Route::get('/Booking', function() {
-    return view('Booking');
-});
+Route::get('/Booking', 'BookController@show')->middleware('auth');
 Route::get('/editprofile', function() {
     return view('editprofile');
 });
+Route::get('/About', function() {
+    return view('About');
+});
 
- //from User Dashboard
-
-
-
- Route::get('/ProductCategory','ProductController@category');
+ Route::get('/ProductCategory','ProductController@category')->middleware('auth');
  
- Route::get('/Description/{id}','ProductController@description');
+ Route::get('/Description/{id}','ProductController@description')->middleware('auth');
 
 Auth::routes();
 
@@ -48,23 +35,32 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get ('/Insertproduct','ProductController@index');
 
-Route::delete('/Insertproduct/{id}','ProductController@destroy');
 
 Route::put('/product','BookController@store');
 
 //Posting data
 
-
-Route::get('/Insertproduct','ProductController@getProductType'); ///fetching
-
-
+//Admin Routes
+Route::get('/admindashboard', function() {
+    return view('Admin.admindashboard');
+});
+Route::get('/products', function() {
+    return view('Admin.products');
+});
+Route::get('/Insertproduct','ProductController@getProductType');
 route::post('/InsertProductCategory','ProductTypeController@store');
 Route::get ('/InsertProductCategory','ProductTypeController@index');
-
-
+route::post('/EditProductCategory/{id}','ProductTypeController@store');
+Route::get ('/EditProductCategory/{id}','ProductTypeController@index');
 route::post('/Insertproduct','ProductController@store');
+Route::get ('/Insertproduct','ProductController@index');
+Route::delete('/Insertproduct/{id}','ProductController@destroy');
+
+//Users Routes
+
+Route::put('/Booking/{id}','BookController@show')->middleware('auth');
 
 
-Route::put('/Booking/{id}','BookController@show');
+
+

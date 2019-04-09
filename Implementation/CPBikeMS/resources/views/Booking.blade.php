@@ -27,48 +27,7 @@
 </head> 
 <body> 
 	<!-- banner -->
-	<div id="home" class="banner">
-		<div class="banner-agileinfo">
-			<!-- header -->
-			<div class="header">
-				<div class="container">		
-					<div class="logo">
-						<h1><a href="index.html">Motorbike</a></h1>
-					</div> 
-					<div class="menu">
-						<a href="" id="menuToggle"> <span class="navClosed"></span> </a>
-						<nav>  
-							<a href="#home" class="active scroll">Home</a> 
-							<a href="#about" class="scroll">About</a>  
-							<a href="#services" class="scroll">Services</a>  
-							<a href="#news" class="scroll">News</a>
-							<a href="#spec" class="scroll">Specifications</a> 
-							<a href="#gallery" class="scroll">Gallery</a> 
-							<a href="#contact" class="scroll">Contact</a> 
-						</nav>
-						<script>
-						(function($){
-							// Menu Functions
-							$(document).ready(function(){
-							$('#menuToggle').click(function(e){
-								var $parent = $(this).parent('.menu');
-							  $parent.toggleClass("open");
-							  var navState = $parent.hasClass('open') ? "hide" : "show";
-							  $(this).attr("title", navState + " navigation");
-									// Set the timeout to the animation length in the CSS.
-									setTimeout(function(){
-										console.log("timeout set");
-										$('#menuToggle > span').toggleClass("navClosed").toggleClass("navOpen");
-									}, 200);
-								e.preventDefault();
-							});
-						  });
-						})(jQuery);
-						</script>
-		 
-					</div>
 	
-
 
 
 
@@ -118,7 +77,7 @@
 									<li class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-end justify-content-start">
 										<div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto">
 											<div><div class="product_number"></div></div>
-											<div><div class="product_image"><img src="/{{ $booking->img}}"  style="height:100px; width:100px;"></div></div>
+											<div><div class="product_image"></div></div>
 											<div class="product_name_container">
 												<div class="product_name"><a href="product.html"></a></div>
 												<div class="product_text"></div>

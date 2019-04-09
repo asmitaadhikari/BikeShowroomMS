@@ -67,19 +67,27 @@ class ProductTypeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product= ModelProductType::find($id);
+        return view('admin.EditProductCategory',[
+        'productcat'=>$product
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
+
+
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request(),[
+            'producttypename'=>'required|max:150'
+
+
+        ]);
+
+        $product=ModelProductType::find($id);
+        $product->p_type=$request->producttypename;
+        $product->save();
+        return redirect()->to('/EditProductCategory')->with('success','Product Category Updated');
     }
 
     /**
