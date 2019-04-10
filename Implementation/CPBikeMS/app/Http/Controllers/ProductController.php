@@ -6,6 +6,9 @@ use App\Productmodel;
 use App\ModelProductType;
 use App\user;
 use Auth;
+use App\BookModel;
+use Carbon;
+
 
 use Illuminate\Http\Request;
 
@@ -30,11 +33,7 @@ class ProductController extends Controller
      {
         // $movie=  DB::table('productcat')
         // ->select('productcat.*')
-     
         // ->get();
-        
-
-        
         // return view('Admin.Insertproduct')->with('showproduct',$movie);
      
     }
@@ -133,7 +132,7 @@ class ProductController extends Controller
         $Productmodel=Productmodel::find($id);
 
          $Productmodel->delete();
-            return redirect()->to('/Insertproduct')->withSuccess('Product deleted successfully !');
+         return redirect()->to('/Insertproduct')->withSuccess('Product deleted successfully !');
     }
     public function getProductType() //for combo box fetchning
     {
@@ -176,4 +175,17 @@ class ProductController extends Controller
         ->toArray();
         return view('Description',compact('product','getproduct')); 
     }
+
+    public function book(Request $request)
+    {
+        $book=new BookModel();
+        $book->bookingdate=Carbon\Carbon::now('Asia/Kathmandu')->toDateTimeString('Y-m-d H:i');
+        $book->id=$request->userid;
+        $book->productid=$request->productid;
+        $book->save();
+        return redirect()->back()->with('booking Success','Booking is Done'); 
+        // dd($book);
+    }
+
+    
 }

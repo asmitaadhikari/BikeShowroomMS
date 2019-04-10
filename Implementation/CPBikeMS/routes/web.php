@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome2');
 });
 
-Route::get('/Booking', 'BookController@show')->middleware('auth');
+
 Route::get('/editprofile', function() {
     return view('editprofile');
 });
@@ -23,9 +23,7 @@ Route::get('/About', function() {
     return view('About');
 });
 
- Route::get('/ProductCategory','ProductController@category')->middleware('auth');
- 
- Route::get('/Description/{id}','ProductController@description')->middleware('auth');
+
 
 Auth::routes();
 
@@ -36,8 +34,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-
-Route::put('/product','BookController@store');
 
 //Posting data
 
@@ -58,9 +54,14 @@ Route::get ('/Insertproduct','ProductController@index');
 Route::delete('/Insertproduct/{id}','ProductController@destroy');
 
 //Users Routes
+// Route::post('/Booking','BookController@store');
 
-Route::put('/Booking/{id}','BookController@show')->middleware('auth');
+Route::get('/ProductCategory','ProductController@category')->middleware('auth');
+Route::get('/Description/{id}','ProductController@description')->middleware('auth');
+Route::post('/Description/{id}','ProductController@book');
+Route::post('/Booking/{id}','BookController@create');
 
+// Route::get('/Booking', 'BookController@create');
 
 
 

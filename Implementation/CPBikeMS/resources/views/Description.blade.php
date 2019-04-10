@@ -185,11 +185,10 @@
                    
                      <div class="occasion-cart">
                         <div class="toys single-item singlepage">
-                           <form method="Post" action="{{url('/Booking/{$products->productid}')}}">
+                           <form method="Post" action="{!! url('/Description',[$products->productid]) !!}">
                            
                            {{ csrf_field() }}
-                              {{method_field('put')}}
-
+                              
                               <input type="hidden"name="productid" value="{{$products->productid}}"/>
 
                                  @auth
@@ -201,10 +200,21 @@
                           Book Now
                               </button>
                            </form>
+                           <br>
+                           
+                          <form method="POST" action="{{url('/Booking',$products->productid)}}">
+                          {{csrf_field()}}
+                          <button  type="submit"  class="toys-cart ptoys-cart add">
+                         View Book 
+                        </button>
+                          </form> 
                         </div>
                      </div>
                     
                   </div>
+                 
+             
+                              
                   <div class="clearfix"> </div>
                   @endforeach
                   <!--/tabs-->

@@ -159,16 +159,18 @@
                   <div class="left-side">
                 
                      <h3 class="agileits-sear-head">Category</h3>
-                     @foreach($getproduct as $productcat)
+                     
                      <ul>
-                     
+                     @foreach($getproduct as $productcat)
                         <li>
-                          
+                       
                          <a href="">  <span class="span">{!! $productcat->producttypename !!}</span></a>
+
+                       
                         </li>
-                     
+                        @endforeach
                      </ul>
-                     @endforeach
+                     
                   </div>
             
                </div>

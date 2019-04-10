@@ -18,7 +18,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        return view('/products');
+       
     }
 
     /**
@@ -26,9 +26,11 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request,$id)
     {
-        return redirect()->to('/Booking');
+        $user=auth()->user();
+        $book=DB::table('booking')->join('product', 'product.productid','=','booking.productid')->where('booking.id','=',$user->id)->get();
+        return view('Booking',compact('book'));
     }
 
     /**
@@ -39,12 +41,7 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {   
-        $book=new BookModel();
-        $book->bookingdate=Carbon\Carbon::now('Asia/Kathmandu')->toDateTimeString('Y-m-d H:i');
-        $book->id=$request->userid;
-        $book->productid=$request->productid;
-        $book->save();
-        return redirect()->to ('/Booking')->with('booking Success','Booking is Done'); 
+        
     }
 
     /**
@@ -55,10 +52,7 @@ class BookController extends Controller
      */
     public function show()
     {
-        $user=auth()->user();
-		$booking=DB::table('booking')->join('product','product.productid','=','booking.productid')
-		->where('id','=',$user->id)->get();
-		return view('/booking',compact('booking'));
+     
     }
 
     /**
