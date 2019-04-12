@@ -21,7 +21,7 @@ class ProductController extends Controller
      */
     public function index() //for fetchning tables
     {
-        $product=new Productmodel();
+        $product=new ModelProductType();
         $product=$product->get();
         $viewproduct= new Productmodel();
         $viewproduct=$viewproduct->get();

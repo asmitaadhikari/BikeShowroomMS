@@ -53,7 +53,7 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="#">Profile</a>
-                                        <a class="dropdown-item" href="#">Billing</a>
+                                        <a class="dropdown-item" href="/Billing">Billing</a>
                                     </div>
                                 </li>
                             </ul>
@@ -76,6 +76,7 @@
                 </div>
             </div>
             <!-- row -->
+          
             <div class="row tm-content-row tm-mt-big">
                 <div class="tm-col tm-col-big">
                   
@@ -93,60 +94,50 @@
                 </div>
 
                 <div class="tm-col tm-col-big">
+                
                     <div class="bg-white tm-block h-100">
                         <div class="row">
                             <div class="col-8">
-                                <h2 class="tm-block-title d-inline-block">Top Product List</h2>
+                                <h2 class="tm-block-title d-inline-block"></h2>
 
                             </div>
                             <div class="col-4 text-right">
                                 <a href="products.html" class="tm-link-black">View All</a>
                             </div>
                         </div>
+                        @if($user->count())
+	             @foreach($user as $key=>$users)
+                 {!!$key + 1 !!}
+                        <ul class="tm-list-group tm-list-group-alternate-color tm-list-group-pad-big">
+
+                
+                
                         
-                        <ol class="tm-list-group tm-list-group-alternate-color tm-list-group-pad-big">
-                            <li class="tm-list-group-item">
-                                Donec eget libero
+                            <li >
+                            {!! $users->name !!}
                             </li>
-                            <li class="tm-list-group-item">
-                                Nunc luctus suscipit elementum
-                            </li>
-                            <li class="tm-list-group-item">
-                                Maecenas eu justo maximus
-                            </li>
-                            <li class="tm-list-group-item">
-                                Pellentesque auctor urna nunc
-                            </li>
-                            <li class="tm-list-group-item">
-                                Sit amet aliquam lorem efficitur
-                            </li>
-                            <li class="tm-list-group-item">
-                                Pellentesque auctor urna nunc
-                            </li>
-                            <li class="tm-list-group-item">
-                                Sit amet aliquam lorem efficitur
-                            </li>
-                        </ol>
+                            
+                           
+                            </ul>
+                           
+                            @endforeach
                     </div>
                 </div>
-                <div class="tm-col tm-col-big">
-                    <!-- <div class="bg-white tm-block h-100">
-                        <h2 class="tm-block-title">Calendar</h2>
-                        <div id="calendar"></div>
-                        <div class="row mt-4">
-                            <div class="col-12 text-right">
-                                <a href="#" class="tm-link-black">View Schedules</a>
-                            </div> -->
-                        </div>
+            
 
                     </div>
                 </div>
-           
-            </div>
+              
+
+@else
+<tr>
+<td colspan="4"> No record found</td>
+</tr>
+@endif
             <footer class="row tm-mt-small">
                 <div class="col-12 font-weight-light">
                     <p class="d-inline-block tm-bg-black text-white py-2 px-4">
-                        Copyright &copy; 2018 Admin Dashboard . Created by Asmita Adhikari
+                        Copyright &copy; 2019 Admin Dashboard . Created by Asmita Adhikari
                         <a rel="nofollow" href="https://www.tooplate.com" class="text-white tm-footer-link"></a>
                     </p>
                 </div>

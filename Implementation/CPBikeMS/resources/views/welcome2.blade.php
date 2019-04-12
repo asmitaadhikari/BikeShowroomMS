@@ -71,16 +71,17 @@
                         <ul>
                           
                            <li>
-                              <button type="button" data-toggle="modal" data-target="#exampleModal"> <span class="far fa-user"></span></button>
-                           </li>
-                           <li class="toyscart toyscart2 cart cart box_1">
-                              <form action="#" method="post" class="last">
-                                 <input type="hidden" name="cmd" value="_cart">
-                                 <input type="hidden" name="display" value="1">
-                                 <button class="top_toys_cart" type="submit" name="submit" value="">
-                                 <span class="fas fa-cart-arrow-down"></span>
-                                 </button>
-                              </form>
+                          
+                              <button type="button" > <span class="far fa-user"></span></button>
+                           @auth
+                              <li class="nav-item dropdown">
+                                <a href="#"  aria-expanded="false" aria-haspopup="true" v-pre>
+                                    {{ Auth::user()->name }} 
+                                </a>
+
+                               
+                              </li>
+                              @endauth
                            </li>
                         </ul>
                      </div>
@@ -118,6 +119,31 @@
                      <li class="nav-item">
                         <a href="contact.html" class="nav-link">Contact</a>
                      </li>
+
+                     @auth
+                     <li class="nav-item dropdown">
+                    
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account Setting
+                     
+                        
+                        
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                           <a class="nav-link" href="">Edit profile</a>
+
+                           <a class="nav-link" href="{{route('logout')}}"
+                           onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">Logout
+                         
+                           <form id="logout-form" action="{{route('logout')}}" method="POST" style="display:none;">
+                           {{@csrf_field}}
+                         
+                           
+                        </div>
+                        </a>
+                     </li>
+                     @endauth
+                    
                   </ul>
                </div>
             </nav>

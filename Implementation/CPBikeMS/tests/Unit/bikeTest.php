@@ -71,5 +71,4 @@ public function testInsertProduct()
     $this->assertEquals('Sports',$product->name);
 }
 
-
 }

@@ -118,7 +118,7 @@
                                     <select class="custom-select col-xl-9 col-lg-8 col-md-8 col-sm-7" name="category">
                                     
                                     <option value="">Select Category</option>
-                                     @foreach( $modelproducttype as $data ) 
+                                     @foreach( $product as $data ) 
                                         <option value={{ $data->producttypeid}}>{{$data->producttypename}}</option>
     
                                      @endforeach

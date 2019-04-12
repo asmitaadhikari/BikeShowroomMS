@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 
+
 Route::get('/editprofile', function() {
     return view('editprofile');
 });
@@ -23,6 +24,13 @@ Route::get('/About', function() {
     return view('About');
 });
 
+Route::get('/About', function() {
+    return view('About');
+});
+
+Route::get('/Billing', function() {
+    return view('Admin.Billing');
+});
 
 
 Auth::routes();
@@ -38,9 +46,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Posting data
 
 //Admin Routes
-Route::get('/admindashboard', function() {
-    return view('Admin.admindashboard');
-});
+
 Route::get('/products', function() {
     return view('Admin.products');
 });
@@ -52,6 +58,7 @@ Route::get ('/EditProductCategory/{id}','ProductTypeController@index');
 route::post('/Insertproduct','ProductController@store');
 Route::get ('/Insertproduct','ProductController@index');
 Route::delete('/Insertproduct/{id}','ProductController@destroy');
+Route::get ('/admindashboard','AdminController@show');
 
 //Users Routes
 // Route::post('/Booking','BookController@store');
