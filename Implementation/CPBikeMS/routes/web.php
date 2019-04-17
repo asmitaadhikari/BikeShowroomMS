@@ -17,9 +17,10 @@ Route::get('/', function () {
 
 
 
-Route::get('/editprofile', function() {
-    return view('editprofile');
+Route::get('/Edit', function() {
+    return view('Edit');
 });
+
 Route::get('/About', function() {
     return view('About');
 });
@@ -30,6 +31,10 @@ Route::get('/About', function() {
 
 Route::get('/Billing', function() {
     return view('Admin.Billing');
+});
+
+Route::get('/Order', function() {
+    return view('Order');
 });
 
 
@@ -50,11 +55,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/products', function() {
     return view('Admin.products');
 });
+
+Route::get('/ViewOrder', function() {
+    return view('Admin.ViewOrder');
+});
+
+
+Route::get ('/Viewbooking','BookController@show');
 Route::get('/Insertproduct','ProductController@getProductType');
 route::post('/InsertProductCategory','ProductTypeController@store');
 Route::get ('/InsertProductCategory','ProductTypeController@index');
-route::post('/EditProductCategory/{id}','ProductTypeController@store');
-Route::get ('/EditProductCategory/{id}','ProductTypeController@index');
+route::put('/EditProductCategory/{id}','ProductTypeController@update');
+Route::get ('/EditProductCategory/{id}','ProductTypeController@edit');
 route::post('/Insertproduct','ProductController@store');
 Route::get ('/Insertproduct','ProductController@index');
 Route::delete('/Insertproduct/{id}','ProductController@destroy');
@@ -66,9 +78,12 @@ Route::get ('/admindashboard','AdminController@show');
 Route::get('/ProductCategory','ProductController@category')->middleware('auth');
 Route::get('/Description/{id}','ProductController@description')->middleware('auth');
 Route::post('/Description/{id}','ProductController@book');
-Route::post('/Booking/{id}','BookController@create');
+Route::get('/Booking','BookController@create');
 
-// Route::get('/Booking', 'BookController@create');
+Route::post('/Booking', 'BookController@create');
+
+// add booking to order
+Route::post('/order','BookController@order');
 
 
 

@@ -120,6 +120,9 @@
                         <a href="contact.html" class="nav-link">Contact</a>
                      </li>
 
+
+                    
+                     
                      @auth
                      <li class="nav-item dropdown">
                     
@@ -146,6 +149,8 @@
                     
                   </ul>
                </div>
+
+            
             </nav>
          </div>
          <!-- Slideshow 4 -->

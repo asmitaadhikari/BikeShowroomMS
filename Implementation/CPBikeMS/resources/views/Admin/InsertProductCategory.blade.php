@@ -43,7 +43,7 @@
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown active">
                                 <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
                                     Insert
@@ -58,7 +58,7 @@
                                 <a class="nav-link" href="/addproducts"> Products</a>
                             </li>
 
-                            <li class="nav-item active">
+                            <li class="nav-item ">
                                 <a class="nav-link" href="#">Accounts</a>
                             </li>
                             <li class="nav-item dropdown">
@@ -118,10 +118,9 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <form action="" class="tm-signup-form" method="POST" >
-                
+                            <form action="" class="tm-signup-form" method="POST" action="{{url('/Admin.InsertProductCategory')}}" >
+                            {{ csrf_field() }}
                                 <div class="form-group">
-                                    <label for="name"> Product Name</label>
                                    
                                     <input type="text" placeholder="Enter Product Name"id="name" name="p_type" type="text" class="form-control validate">
                                    

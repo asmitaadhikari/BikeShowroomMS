@@ -78,16 +78,16 @@ class ProductTypeController extends Controller
 
     public function update(Request $request, $id)
     {
-        $this->validate($request(),[
-            'producttypename'=>'required|max:150'
+        // $this->validate(request(),[
+        //     'producttypename'=>'required|max:150'
 
 
-        ]);
+        // ]);
 
         $product=ModelProductType::find($id);
-        $product->p_type=$request->producttypename;
+        $product->producttypename=$request->p_type;
         $product->save();
-        return redirect()->to('/EditProductCategory')->with('success','Product Category Updated');
+        return redirect()->back()->with('success','Product Category Updated');
     }
 
     /**

@@ -202,7 +202,7 @@
                            </form>
                            <br>
                            
-                          <form method="POST" action="{{url('/Booking',$products->productid)}}">
+                          <form method="POST" action="{{url('/Booking')}}">
                           {{csrf_field()}}
                           <button  type="submit"  class="toys-cart ptoys-cart add">
                          View Book 

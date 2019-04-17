@@ -119,17 +119,20 @@
                     <div class="row">
                         <div class="col-12">
                             <form action="" class="tm-signup-form" method="POST" >
+                            {{ csrf_field() }}
+
+                            {{ method_field('put') }}
                 
                                 <div class="form-group">
                                     <label for="name"> Product Name</label>
-                                   
-                                    <input type="text" placeholder="Enter Product Name"id="name" name="p_type" type="text" class="form-control validate">
+                                    {{$productcat->producttypename}}
+                                    <input type="text" placeholder="Enter Product Name"id="name" value="{{$productcat->producttypename}}" name="p_type" type="text" class="form-control validate">
                                    
                                 </div>
                                
                                 <div class="row">
                                     <div class="col-12 col-sm-4">
-                                        <button type="submit" class="btn btn-primary">Insert
+                                        <button type="submit" class="btn btn-primary">Update
                                         </button> <br> <br>
                                        
                                     </div>

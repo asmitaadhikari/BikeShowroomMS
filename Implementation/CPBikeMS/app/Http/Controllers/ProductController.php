@@ -29,15 +29,7 @@ class ProductController extends Controller
         return view('Admin.Insertproduct',compact('product','viewproduct'));
       }
            
-     public function showproduct()
-     {
-        // $movie=  DB::table('productcat')
-        // ->select('productcat.*')
-        // ->get();
-        // return view('Admin.Insertproduct')->with('showproduct',$movie);
-     
-    }
-
+   
     /**
      * Show the form for creating a new resource.
      *

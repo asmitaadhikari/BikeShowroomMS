@@ -126,7 +126,7 @@
                      <a href="/">Home</a>
                      <span>/ </span>
                   </li>
-                  <li>Checkout</li>
+                  <li>Order</li>
                </ul>
             </div>
          </div>
@@ -138,7 +138,7 @@
             <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
                <div class="shop_inner_inf">
                   <div class="privacy about">
-                     <h3>View <span>Booking </span></h3>
+                     <h3>Or<span>der</span></h3>
                      <div class="checkout-right">
                        
                         <table class="timetable_sub">
@@ -149,47 +149,38 @@
                                  
                                  <th>Product Name</th>
                                  <th>Price</th>
-                                 <th>Your Booking</th>
                                 
                               </tr>
                            </thead>
-                           @if($book->count()>0)
-                             @foreach($book as $key => $booking)
+                         
+                            
                            <tbody>
+                              @if($data->count())
+                                   @foreach($data as $key=>$row)
 				
                               <tr class="rem1">
-                                 <td class="invert">{!!$key + 1 !!}</td>
-                                 <td class="invert-image"><a href="single.html"><img src="/{!! $booking->img !!} "  class="img-responsive"></a></td>
-                                 <td class="invert">{!! $booking->name !!} </td>
-                                 <td class="invert">{!! $booking->price !!} </td>
-                                 <td class="invert">
-                                 @if($checkBooked->count()>0)
-                                 <button  type="submit"  class="toys-cart ptoys-cart add">
-                                       Cancel Order
-                                    </button>
-                                 @else
-                                    <form method="POST" action="{{url('/order')}}">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" value="{{$booking->bookingid}}" name="id">
-                                    <button  type="submit"  class="toys-cart ptoys-cart add">
-                                       Confirm Order
-                                    </button>
-                                    </form>
-                                 @endif
-                                 </td>
+                                 <td>{!!$key + 1 !!}</td>
+                                 <td class="invert-image"><a href="single.html"><img src=""  class="img-responsive"></a></td>
+                                 <td class="invert">{{$row->name}}</td>
+                                 <td class="invert">{{$row->price}}</td>
+                             
+
+                                 
                                     
                                  </td>
                               </tr>
+                                    @endforeach
+
+                                    @else
+                <tr>
+                    <td colspan="4"> No record found</td>
+                </tr>
+            @endif
                             
                              
                            </tbody>
-                           @endforeach
-         @else
-         
-         <h1 class="text-center">Your cart is empty !!</h1>
-         
-         @endif
-                        </table>
+                           
+             </table>
 
 					 </div>
 		
