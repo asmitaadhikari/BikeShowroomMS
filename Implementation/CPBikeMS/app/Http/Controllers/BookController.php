@@ -86,13 +86,14 @@ class BookController extends Controller
             $book=DB::table('booking')
             ->Join('product','product.productid','=','booking.productid')
             ->Join('users','users.id','=','booking.id')
-            ->select('product.name','product.price','users.email','booking.bookingdate') 
+            ->select('product.name','product.price','users.email','booking.bookingdate','product.img') 
             ->get();
 
             return view('Admin.Viewbooking',compact('book'));
         
      
     }
+    
 
     /**
      * Show the form for editing the specified resource.

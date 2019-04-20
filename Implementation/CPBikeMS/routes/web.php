@@ -17,8 +17,8 @@ Route::get('/', function () {
 
 
 
-Route::get('/Edit', function() {
-    return view('Edit');
+Route::get('/EditProduct', function() {
+    return view('Admin.EditProduct');
 });
 
 Route::get('/About', function() {
@@ -67,6 +67,8 @@ route::post('/InsertProductCategory','ProductTypeController@store');
 Route::get ('/InsertProductCategory','ProductTypeController@index');
 route::put('/EditProductCategory/{id}','ProductTypeController@update');
 Route::get ('/EditProductCategory/{id}','ProductTypeController@edit');
+route::put('/EditProduct/{id}','ProductController@update');
+Route::get ('/EditProduct/{id}','ProductController@edit');
 route::post('/Insertproduct','ProductController@store');
 Route::get ('/Insertproduct','ProductController@index');
 Route::delete('/Insertproduct/{id}','ProductController@destroy');

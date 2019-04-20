@@ -97,10 +97,11 @@
                                     <tr class="tm-bg-gray">
                                         <th scope="col">S.No</th>
                                         <th scope="col">Product Name</th>
+                                        <th scope="col" class="text-center">Image</th>
+                                        <th scope="col" class="text-center">Price</th>
                                         <th scope="col" class="text-center">User Info</th>
-                                        <th scope="col" class="text-center">Confirm Booking</th>
-                                        <th scope="col" class="text-center">Cancel Booking</th>
                                         <th scope="col" class="text-center">Generate Bill</th>
+                                       
                                     </tr>
                                 </thead>
                                 <tbody>

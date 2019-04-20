@@ -23,10 +23,10 @@ class ProductController extends Controller
     {
         $product=new ModelProductType();
         $product=$product->get();
-        $viewproduct= new Productmodel();
-        $viewproduct=$viewproduct->get();
+        $product= new Productmodel();
+        $product=$product->get();
 
-        return view('Admin.Insertproduct',compact('product','viewproduct'));
+        return view('Admin.Insertproduct',compact('product','product'));
       }
            
    
@@ -98,7 +98,10 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product= Productmodel::find($id);
+        return view('admin.EditProduct',[
+        'product'=>$product
+        ]);
     }
 
     /**
@@ -110,7 +113,20 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product=Productmodel::find($id);
+        $product->name=$request->name;
+        $product->cc=$request->cc;
+        $product->fuel=$request->fuel;
+        $product->gear=$request->gear;
+        $product->speed=$request->speed;
+        $product->technology=$request->technology;
+        $product->tyre=$request->tyre;
+        $product->price=$request->price;
+        $product->stroke=$request->stroke;
+        $product->Clutch=$request->Clutch;
+        $product->warranty=$request->warranty;
+        $product->save();
+        return redirect()->back()->with('success','Product Updated');
     }
 
     /**

@@ -177,7 +177,7 @@
                                     <td>{!!$key + 1 !!}</td>
                                        
                                         <td class="tm-product-name">{!! $products->producttypename !!}</td>
-                                       <td>
+                                       
                                        <a href="/EditProductCategory/{{$products->producttypeid}}"
                                        class="tm-product-name">Edit
                                        </a>  

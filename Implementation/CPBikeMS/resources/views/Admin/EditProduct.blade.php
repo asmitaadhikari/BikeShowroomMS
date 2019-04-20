@@ -97,8 +97,8 @@
                     </div>
                     <div class="row mt-4 tm-edit-product-row">
                         <div class="col-xl-7 col-lg-7 col-md-12">
-                            <form action="" class="tm-edit-product-form" method="post" action="{{url('/Admin.Insertproduct')}}" enctype="multipart/form-data" >
-                {{ csrf_field() }}
+                            <form action="" class="tm-edit-product-form" method="post" action="" enctype="multipart/form-data" >
+             
                                 <div class="input-group mb-3">
                                     <label for="name" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Product
                                         Name
@@ -115,15 +115,7 @@
                                 
                                     <label for="category" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Product Category</label>
                                    
-                                    <select class="custom-select col-xl-9 col-lg-8 col-md-8 col-sm-7" name="category">
-                                    
-                                    <option value="">Select Category</option>
-                                     @foreach( $product as $data ) 
-                                        <option value={{ $data->producttypeid}}>{{$data->producttypename}}</option>
-    
-                                     @endforeach
-                                    
-                                    </select>
+                          
                                     
                                 </div>  
                                 <div class="input-group mb-3">
@@ -207,84 +199,6 @@
         </div>
         </form>
 
-         
-        <div class="row tm-content-row tm-mt-big">
-                <div class="col-md-10 tm-md-12 tm-sm-12 tm-col">
-                    <div class="bg-white tm-block h-100">
-                        <div class="row">
-                            <div class="col-md-8 col-sm-12">
-                                <h2 class="tm-block-title d-inline-block">Products</h2>
-
-                            </div>
-                            <div class="col-md-4 col-sm-12 text-right">
-                                <a href="/Insertproduct" class="btn btn-small btn-primary">Add New Product</a>
-                            </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-hover table-striped tm-table-striped-even mt-3">
-                                <thead>
-                                    <tr class="tm-bg-gray">
-                                        <th scope="col">S.No</th>
-                                        <th scope="col">Product Name</th>
-                                        <th scope="col" class="text-center">Price</th>
-                                        
-                                        <th scope="col">Engine Displacement</th>
-                                        <th scope="col">fuel</th>
-                                        <th scope="col">gear</th>
-                                        <th scope="col">Control</th>
-                                        <th scope="col">&nbsp;</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                @if($product->count())
-	                                @foreach($product as $key=>$products)
-                                  
-                                    <tr>
-                                    <td>{!!$key + 1 !!}</td>
-                                       
-                                        <td class="tm-product-name">{!! $products->name !!}</td>
-                                        <td class="tm-product-name">{!! $products->price!!}</td>
-                                       
-                                        <td class="tm-product-name">{!! $products->cc!!}</td>
-                                        <td class="tm-product-name">{!! $products->fuel!!}</td>
-                                        <td class="tm-product-name">{!! $products->gear!!}</td>
-                                        <td class="tm-product-name"><a href="/EditProduct/{{$products->productid}}">Edit</a>
-                                     
-                                      
-                                        <form action="{{url('/Insertproduct',$products->productid)}}" method="POST">
-		                                    {{ csrf_field() }} 
-   
-                                            {!! method_field('DELETE') !!}
-                                                <button class="btn btn-primary btn-lg" type="submit" >
-                                                <i class="fas fa-trash-alt tm-trash-icon"></i>
-                                                </button>
-                                            
-                                            </form>
-                                            
-                                       </td>
-                                       
-                                    </tr>
-                                   
-                                    @endforeach
-
-                                    @else
-                <tr>
-                    <td colspan="4"> No record found</td>
-                </tr>
-            @endif
-                                    
-                                   
-                                  
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="tm-table-mt tm-table-actions-row">
-                           
-                            
-                        </div>
-                    </div>
-                </div>
     
         <footer class="row tm-mt-big">
             <div class="col-12 font-weight-light">

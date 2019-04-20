@@ -159,7 +159,7 @@
 				
                               <tr class="rem1">
                                  <td class="invert">{!!$key + 1 !!}</td>
-                                 <td class="invert-image"><a href="single.html"><img src="/{!! $booking->img !!} "  class="img-responsive"></a></td>
+                                 <td class="invert-image"><a href=""><img src="/{!! $booking->img !!}"  class="img-responsive"></a></td>
                                  <td class="invert">{!! $booking->name !!} </td>
                                  <td class="invert">{!! $booking->price !!} </td>
                                  <td class="invert">

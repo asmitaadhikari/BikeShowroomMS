@@ -85,7 +85,7 @@
                 <div class="col-md-10 tm-md-12 tm-sm-12 tm-col">
                     <div class="bg-white tm-block h-100">
                         <div class="row">
-                            <div class="col-md-8 col-sm-12">
+                            <div class="col-md-9 col-sm-12">
                                 <h2 class="tm-block-title d-inline-block">View Booking</h2>
 
                             </div>
@@ -99,6 +99,7 @@
                                         <th scope="col">Product Name</th>
                                         <th scope="col" class="text-center">User Info</th>
                                         <th scope="col" class="text-center">Product Price</th>
+                                        
                                         <th scope="col">Booking Date</th>
                                         
                                     </tr>
@@ -113,6 +114,7 @@
                                         <td class="tm-product-name">{!! $books->name !!}</td>
                                         <td class="text-center">{!! $books->email !!}</td>
                                         <td class="text-center">{!! $books->price !!}</td>
+                                       
                                         <td class="text-center">{!! $books->bookingdate !!}</td>
                                         
                                     </tr>
