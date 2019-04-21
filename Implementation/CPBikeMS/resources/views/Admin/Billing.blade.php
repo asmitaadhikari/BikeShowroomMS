@@ -11,12 +11,28 @@
 
     <div class="toolbar hidden-print">
         <div class="text-right">
-            <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Print</button>
-            <button class="btn btn-info"><i class="fa fa-file-pdf-o"></i> Export as PDF</button>
+
+        <script src="{{ asset('js/app.js') }}"></script>
+<script type="text/javascript">
+    function printReport()
+    {
+        var prtContent = document.getElementById("printableArea");
+        var WinPrint = window.open();
+        WinPrint.document.write(prtContent.innerHTML);
+        WinPrint.document.close();
+        WinPrint.focus();
+        WinPrint.print();
+        WinPrint.close();
+    }
+</script>
+
+
+            <button id="printInvoice" class="btn btn-info" onClick="printReport()"><i class="fa fa-print"></i> Print</button>
+            
         </div>
         <hr>
     </div>
-    <div class="invoice overflow-auto">
+    <div class="invoice overflow-auto" id="printableArea">
         <div style="min-width: 600px">
             <header>
                 <div class="row">
@@ -38,35 +54,43 @@
                 </div>
             </header>
             <main>
+        
+                                    <tr>
+                                   
+                                    
                 <div class="row contacts">
                     <div class="col invoice-to">
                         <div class="text-gray-light">INVOICE TO:</div>
-                        <h2 class="to">John Doe</h2>
-                        <div class="address">796 Silver Harbour, TX 79273, US</div>
-                        <div class="email"><a href="mailto:john@example.com">john@example.com</a></div>
+                        <h2 class="to">{{ Auth::user()->name }}</h2>
+                       
+                        <div class="email"><a href="mailto:john@example.com">{{ Auth::user()->email }}</a></div>
                     </div>
                     <div class="col invoice-details">
                         <h1 class="invoice-id">INVOICE 3-2-1</h1>
-                        <div class="date">Date of Invoice: 01/10/2018</div>
-                        <div class="date">Due Date: 30/10/2018</div>
+                        <div class="date">Date of Invoice: {{$date}}</div>
+                       
                     </div>
                 </div>
+                </tr>
+     
                 <table border="0" cellspacing="0" cellpadding="0">
                     <thead>
                         <tr>
                             <th>S No</th>
                             <th class="text-left">Bike Name</th>
-                            <th class="text-right">Price</th>
-                            <th class="text-right">HOURS</th>
+                            
+                            <th class="text-right">PRICE</th>
                             <th class="text-right">TOTAL</th>
                         </tr>
                     </thead>
                     <tbody>
+                    @if($bill->count())
+	                                @foreach($bill as $key=>$bills)
                         <tr>
-                            <td class="no">04</td>
+                        <td>{!!$key + 1 !!}</td>
                             <td class="text-left"><h3>
                                 <a target="_blank" href="">
-                                Youtube channel
+                                {!! $bills->name !!}
                                 </a>
                                 </h3>
                                <a target="_blank" href="">
@@ -74,32 +98,20 @@
                                </a> 
                                to improve your Javascript skills. Subscribe and stay tuned :)
                             </td>
-                            <td class="unit">$0.00</td>
-                            <td class="qty">100</td>
-                            <td class="total">$0.00</td>
+                            
+                            <td class="qty">{!! $bills->price !!}</td>
+                            <td class="total"> {!! $bills->price !!}</td>
                         </tr>
-                        <tr>
-                            <td class="no">01</td>
-                            <td class="text-left"><h3>Website Design</h3>Creating a recognizable design solution based on the company's existing visual identity</td>
-                            <td class="unit">$40.00</td>
-                            <td class="qty">30</td>
-                            <td class="total">$1,200.00</td>
-                        </tr>
-                        <tr>
-                            <td class="no">02</td>
-                            <td class="text-left"><h3>Website Development</h3>Developing a Content Management System-based Website</td>
-                            <td class="unit">$40.00</td>
-                            <td class="qty">80</td>
-                            <td class="total">$3,200.00</td>
-                        </tr>
-                        <tr>
-                            <td class="no">03</td>
-                            <td class="text-left"><h3>Search Engines Optimization</h3>Optimize the site for search engines (SEO)</td>
-                            <td class="unit">$40.00</td>
-                            <td class="qty">20</td>
-                            <td class="total">$800.00</td>
-                        </tr>
+                      
+                      
                     </tbody>
+                    @endforeach
+
+@else
+<tr>
+<td colspan="4"> No record found</td>
+</tr>
+@endif 
                     <tfoot>
                         <tr>
                             <td colspan="2"></td>

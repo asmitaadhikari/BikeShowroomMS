@@ -114,6 +114,23 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $product=Productmodel::find($id);
+        if($request->hasFile('img'))
+        {
+            $pictureInfo=$request->file('img');
+            $name=$pictureInfo->getClientOriginalName();
+            $folder="ProductImages/";
+            $pictureInfo->move($folder,$name);
+            $picUrl=$folder.$name;
+
+            $product->image=$picUrl;
+            $product->save();
+        }
+
+        else
+        {
+            
+        
+        $product=Productmodel::find($id);
         $product->name=$request->name;
         $product->cc=$request->cc;
         $product->fuel=$request->fuel;
@@ -128,6 +145,7 @@ class ProductController extends Controller
         $product->save();
         return redirect()->back()->with('success','Product Updated');
     }
+}
 
     /**
      * Remove the specified resource from storage.
@@ -190,6 +208,7 @@ class ProductController extends Controller
         $book->bookingdate=Carbon\Carbon::now('Asia/Kathmandu')->toDateTimeString('Y-m-d H:i');
         $book->id=$request->userid;
         $book->productid=$request->productid;
+        $book->status='no';
         $book->save();
         return redirect()->back()->with('booking Success','Booking is Done'); 
         // dd($book);

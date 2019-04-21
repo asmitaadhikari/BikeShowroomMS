@@ -70,5 +70,10 @@ public function testInsertProduct()
 ]);
     $this->assertEquals('Sports',$product->name);
 }
+public function testProductTypeDelete()
+{
+    $response=$this->call('DELETE','/productDelete/1');
+    $this->assertEquals('302',$response->status());
+}
 
 }

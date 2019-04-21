@@ -120,8 +120,11 @@
                         <a href="contact.html" class="nav-link">Contact</a>
                      </li>
 
-
-                    
+                     @auth
+                     <li class="nav-item">
+                        <a href="/Booking" class="nav-link">View booking</a>
+                     </li>
+                    @endauth
                      
                      @auth
                      <li class="nav-item dropdown">

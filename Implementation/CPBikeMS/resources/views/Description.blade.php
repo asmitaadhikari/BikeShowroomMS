@@ -120,6 +120,35 @@
                      <li class="nav-item">
                         <a href="contact.html" class="nav-link">Contact</a>
                      </li>
+                     @auth
+                     <li class="nav-item">
+                        <a href="/Booking" class="nav-link">View booking</a>
+                     </li>
+                    @endauth
+                     
+                     @auth
+                     <li class="nav-item dropdown">
+                    
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account Setting
+                     
+                        
+                        
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                           <a class="nav-link" href="">Edit profile</a>
+
+                           <a class="nav-link" href="{{route('logout')}}"
+                           onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">Logout
+                         
+                           <form id="logout-form" action="{{route('logout')}}" method="POST" style="display:none;">
+                           {{@csrf_field}}
+                         
+                           
+                        </div>
+                        </a>
+                     </li>
+                     @endauth
                   </ul>
                </div>
             </nav>

@@ -71,7 +71,17 @@
                         <ul>
                           
                            <li>
-                              <button type="button" data-toggle="modal" data-target="#exampleModal"> <span class="far fa-user"></span></button>
+                              <button type="button" data-toggle="modal" data-target="#exampleModal"> 
+                                 <button type="button" > <span class="far fa-user"></span></button>
+                                   @auth
+                              <li class="nav-item dropdown">
+                                <a href="#"  aria-expanded="false" aria-haspopup="true" v-pre>
+                                    {{ Auth::user()->name }} 
+                                </a>
+
+                               
+                              </li>
+                              @endauth
                            </li>
 
                         </ul>
@@ -110,6 +120,35 @@
                      <li class="nav-item">
                         <a href="contact.html" class="nav-link">Contact</a>
                      </li>
+                     @auth
+                     <li class="nav-item">
+                        <a href="/Booking" class="nav-link">View booking</a>
+                     </li>
+                    @endauth
+                     
+                     @auth
+                     <li class="nav-item dropdown">
+                    
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account Setting
+                     
+                        
+                        
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                           <a class="nav-link" href="">Edit profile</a>
+
+                           <a class="nav-link" href="{{route('logout')}}"
+                           onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">Logout
+                         
+                           <form id="logout-form" action="{{route('logout')}}" method="POST" style="display:none;">
+                           {{@csrf_field}}
+                         
+                           
+                        </div>
+                        </a>
+                     </li>
+                     @endauth
                   </ul>
                </div>
             </nav>
@@ -163,18 +202,26 @@
                                  <td class="invert">{!! $booking->name !!} </td>
                                  <td class="invert">{!! $booking->price !!} </td>
                                  <td class="invert">
-                                 @if($checkBooked->count()>0)
-                                 <button  type="submit"  class="toys-cart ptoys-cart add">
-                                       Cancel Order
-                                    </button>
-                                 @else
-                                    <form method="POST" action="{{url('/order')}}">
+                                 @if($booking->status=="no")
+                                 <form method="POST" action="{{url('/order')}}">
                                     {{ csrf_field() }}
                                     <input type="hidden" value="{{$booking->bookingid}}" name="id">
-                                    <button  type="submit"  class="toys-cart ptoys-cart add">
+                                    <button  type="submit"  class="btn btn-primary">
                                        Confirm Order
                                     </button>
                                     </form>
+                                            
+                                 @else
+
+                                    <form action="{{url('/Booking',$booking->bookingid)}}" method="POST">
+		                                    {{ csrf_field() }} 
+   
+                                            {!! method_field('DELETE') !!}
+                                                <button class="btn btn-danger" type="submit" >
+                                                Cancel Order
+                                                </button>
+                                            
+                                            </form>
                                  @endif
                                  </td>
                                     

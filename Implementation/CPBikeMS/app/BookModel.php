@@ -9,6 +9,6 @@ class BookModel extends Model
     protected $table="booking";
     protected $primaryKey="bookingid";
     protected $fillable = [
-        'bookingdate','id','productid', 
+        'bookingdate','status','id','productid', 
     ];
 }

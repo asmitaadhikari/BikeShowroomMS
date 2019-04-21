@@ -29,13 +29,10 @@ Route::get('/About', function() {
     return view('About');
 });
 
-Route::get('/Billing', function() {
-    return view('Admin.Billing');
-});
 
-Route::get('/Order', function() {
-    return view('Order');
-});
+
+
+
 
 
 Auth::routes();
@@ -73,7 +70,8 @@ route::post('/Insertproduct','ProductController@store');
 Route::get ('/Insertproduct','ProductController@index');
 Route::delete('/Insertproduct/{id}','ProductController@destroy');
 Route::get ('/admindashboard','AdminController@show');
-
+Route::delete('/Booking/{id}','BookController@destroy');
+Route::get ('/Billing','BillController@show');
 //Users Routes
 // Route::post('/Booking','BookController@store');
 

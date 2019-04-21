@@ -6,13 +6,10 @@ use Illuminate\Http\Request;
 use App\BookModel;
 use App\user;
 use DB;
-use Carbon;
 use App\OrderModel;
+use Carbon;
 
-use App\Productmodel;
-
-
-class BookController extends Controller
+class BillController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,26 +18,17 @@ class BookController extends Controller
      */
     public function index()
     {
-       
+        //
     }
-    
-    
-   
 
-  
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $user=auth()->user();
-        $book=DB::table('booking')
-        ->join('product', 'product.productid','=','booking.productid')
-        ->where('booking.id','=',$user->id)
-        ->get();
-        return view('Booking',compact('book'));
+        //
     }
 
     /**
@@ -49,24 +37,9 @@ class BookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function order(Request $request)
-    {   
-        $user=Auth()->user();
-        $new= new OrderModel;
-        $new->bookingid=$request->id;
-        $new->uid= $user->id;
-        $new->save();
-
-        $data=DB::table('order')
-        ->join('booking','booking.bookingid','=','order.bookingid')
-        ->join('product','product.productid','=','booking.productid')
-        ->select('product.*','booking.bookingdate')
-        ->where('order.uid','=',$user->id)
-        ->get();
-       
-        DB::table('booking')->where('bookingid',$request->id)->update(['status'=>"yes"]);
-        return view('/Order',compact('data')); 
-        
+    public function store(Request $request)
+    {
+        //
     }
 
     /**
@@ -77,19 +50,18 @@ class BookController extends Controller
      */
     public function show()
     {
+        $date=Carbon\Carbon::now('Asia/Kathmandu')->toDateTimeString('Y-m-d H:i');
         
         $user=Auth()->user();
-            $book=DB::table('booking')
+            $bill=DB::table('order')
+            ->Join('booking','booking.bookingid','=','order.bookingid')
             ->Join('product','product.productid','=','booking.productid')
             ->Join('users','users.id','=','booking.id')
-            ->select('product.name','product.price','users.email','booking.bookingdate','product.img') 
+            ->select('product.*','booking.*','order.*')
             ->get();
 
-            return view('Admin.Viewbooking',compact('book'));
-        
-     
+            return view('Admin.Billing',compact('bill','date'));
     }
-    
 
     /**
      * Show the form for editing the specified resource.
@@ -122,8 +94,6 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('order')->where('bookingid',$id)->delete();
-        DB::table('booking')->where('bookingid',$id)->update(['status'=>"no"]);
-        return redirect()->to('/Booking')->withSuccess('Order cancelled successfully !');
+        //
     }
 }

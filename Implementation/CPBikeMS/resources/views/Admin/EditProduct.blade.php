@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add Product|Dashboard Admin</title>
+    <title>Accounts Page - Dashboard Template</title>
     <!--
 
     Template 2108 Dashboard
@@ -15,21 +15,19 @@
     -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
     <!-- https://fonts.google.com/specimen/Open+Sans -->
-    <link rel="stylesheet" href="Admin/css/fontawesome.min.css">
+    <link rel="stylesheet" href="{{asset('Admin/css/fontawesome.min.css') }}">
     <!-- https://fontawesome.com/ -->
-    <link rel="stylesheet" href="Admin/jquery-ui-datepicker/jquery-ui.min.css" type="text/css" />
-    <!-- http://api.jqueryui.com/datepicker/ -->
-    <link rel="stylesheet" href="Admin/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('Admin/css/bootstrap.min.css') }}">
     <!-- https://getbootstrap.com/ -->
-    <link rel="stylesheet" href="Admin/css/tooplate.css">
+    <link rel="stylesheet" href="{{asset('Admin/css/tooplate.css') }}">
 </head>
 
-<body class="bg02">
+<body class="bg03">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <nav class="navbar navbar-expand-xl navbar-light bg-light">
-                    <a class="navbar-brand" href="/admindashboard">
+                    <a class="navbar-brand" href="index.html">
                         <i class="fas fa-3x fa-tachometer-alt tm-site-icon"></i>
                         <h1 class="tm-site-title mb-0">Dashboard</h1>
                     </a>
@@ -41,26 +39,27 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item">
+                                <a class="nav-link" href="/admindashboard">Dashboard
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
                                     Insert
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/InsertProductCatogory">Insert Product Category</a>
-                                    <a class="dropdown-item" href="/products">Insert Product</a>
-                                    
+                                    <a class="dropdown-item" href="/InsertProductCategory"> Insert Product Category</a>
+                                    <a class="dropdown-item" href="/Insertproduct"> Insert Product</a>
+                                    <a class="dropdown-item" href="index.html">Yearly Report</a>
                                 </div>
                             </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/products">Products</a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/addproducts"> Products</a>
                             </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="">Accounts</a>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Accounts</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -87,142 +86,135 @@
             </div>
         </div>
         <!-- row -->
-        <div class="row tm-mt-big">
-            <div class="col-xl-8 col-lg-10 col-md-12 col-sm-12">
+        <div class="row tm-content-row tm-mt-big">
+            <div class="tm-col tm-col-big">
+                <div class="bg-black tm-block">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- <h2 class="tm-block-title d-inline-block">Products List</h2> -->
+                        </div>
+                    </div>
+                    <!-- <ol class="tm-list-group tm-list-group-alternate-color tm-list-group-pad-big">
+                        <li class="tm-list-group-item">
+                            Donec eget libero
+                        </li>
+                        
+                    </ol> -->
+                    <div class="col-12 col-sm-4">
+                                        <!-- <button type="submit" class="btn btn-primary">Update
+                                        </button> -->
+                                    </div>
+                                   
+
+                                   
+                </div>
+            </div>
+            <div class="tm-col tm-col-big">
                 <div class="bg-white tm-block">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="tm-block-title d-inline-block">Add Product</h2>
+                            <h2 class="tm-block-title">Insert Product </h2>
                         </div>
                     </div>
-                    <div class="row mt-4 tm-edit-product-row">
-                        <div class="col-xl-7 col-lg-7 col-md-12">
-                            <form action="" class="tm-edit-product-form" method="post" action="" enctype="multipart/form-data" >
-             
-                                <div class="input-group mb-3">
-                                    <label for="name" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Product
-                                        Name
-                                    </label>
-                                    <input id="name" name="name" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7">
-                                </div>
-                                <div class="input-group mb-3">
-                                    <label for="cc" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 mb-2"> Displacement</label>
+                    <div class="row">
+                        <div class="col-12">
+                            <form action="" class="tm-signup-form" method="POST" >
+                            {{ csrf_field() }}
+
+                            {{ method_field('put') }}
+                
+                                <div class="form-group">
+                                    <label for="name"> Product Name</label>
                                     
-                                    <input id="cc" name="cc" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7">
-                                </div>
-                                
-                                 <div class="input-group mb-3">
-                                
-                                    <label for="category" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Product Category</label>
+                                    <input type="text" placeholder="Enter Product Name"id="name" value="{{$product->name}}" name="name" type="text" class="form-control validate">
                                    
-                          
+                                </div>
+                                <div class="form-group">
+                                    <label for="name"> Fuel</label>
                                     
-                                </div>  
-                                <div class="input-group mb-3">
-                                    <label for="fuel" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Fuel Economy
-                                        
-                                    </label>
-                                    <input id="fuel" name="fuel" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7"
-                                        data-large-mode="true">
+                                    <input type="text" placeholder="Enter Product Name"id="fuel" value="{{$product->fuel}}" name="fuel" type="text" class="form-control validate">
+                                   
                                 </div>
-                                <div class="input-group mb-3">
-                                    <label for="gear" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">No Of Gears
-                                        
-                                    </label>
-                                    <input id="gear" name="gear" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-7 col-sm-7">
+                                <div class="form-group">
+                                    <label for="name"> Displacement</label>
+                                    
+                                    <input type="text" placeholder="Enter Product Name"id="cc" value="{{$product->cc}}" name="cc" type="text" class="form-control validate">
+                                   
                                 </div>
-                                <div class="input-group mb-3">
-                                    <label for="speed" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Speedometer
-                                        
-                                    </label>
-                                    <input id="speed" name="speed" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-7 col-sm-7">
+                                <div class="form-group">
+                                    <label for="name"> Gear</label>
+                                    
+                                    <input type="text" placeholder="Enter Product Name"id="Gear" value="{{$product->gear}}" name="gear" type="text" class="form-control validate">
+                                   
                                 </div>
-                                <div class="input-group mb-3">
-                                    <label for="technology" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Latest Technology
-                                        
-                                    </label>
-                                    <input id="technology" name="technology" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-7 col-sm-7">
+                                <div class="form-group">
+                                    <label for="name"> Speed</label>
+                                    
+                                    <input type="text" placeholder="Enter Product Speed"id="Speed" value="{{$product->speed}}" name="speed" type="text" class="form-control validate">
+                                   
                                 </div>
-                                <div class="input-group mb-3">
-                                    <label for="tyre" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Tyre Type
-                                        
-                                    </label>
-                                    <input id="tyre" name="tyre" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-7 col-sm-7">
+                                <div class="form-group">
+                                    <label for="name"> Technology</label>
+                                    
+                                    <input type="text" placeholder="Enter Product Technology"id="Technology" value="{{$product->technology}}" name="technology" type="text" class="form-control validate">
+                                   
                                 </div>
-                                <div class="input-group mb-3">
-                                    <label for="price" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Price
-                                        
-                                    </label>
-                                    <input id="price" name="price" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-7 col-sm-7">
+                                <div class="form-group">
+                                    <label for="name"> Tyre</label>
+                                    
+                                    <input type="text" placeholder="Enter Product Tyre"id="Tyre" value="{{$product->tyre}}" name="tyre" type="text" class="form-control validate">
+                                   
                                 </div>
-                                <div class="input-group mb-3">
-                                    <label for="price" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Stroke
-                                        
-                                    </label>
-                                    <input id="stroke" name="stroke" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-7 col-sm-7">
+                              
+                                <div class="form-group">
+                                    <label for="name"> Clutch</label>
+                                    
+                                    <input type="text" placeholder="Enter Product Clutch"id="Clutch" value="{{$product->Clutch}}" name="Clutch" type="text" class="form-control validate">
+                                   
                                 </div>
-                                <div class="input-group mb-3">
-                                    <label for="price" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Clutch
-                                        
-                                    </label>
-                                    <input id="clutch" name="clutch" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-7 col-sm-7">
+                                <div class="form-group">
+                                    <label for="name"> warranty</label>
+                                    
+                                    <input type="text" placeholder="Enter Product warranty"id="warranty" value="{{$product->warranty}}" name="warranty" type="text" class="form-control validate">
+                                   
                                 </div>
-                                <div class="input-group mb-3">
-                                    <label for="price" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Warranty
-                                        
-                                    </label>
-                                    <input id="warranty" name="warranty" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-7 col-sm-7">
+                                <div class="form-group">
+                                    <label for="name"> Price</label>
+                                    
+                                    <input type="text" placeholder="Enter Product Price"id="price" value="{{$product->price}}" name="price" type="text" class="form-control validate">
+                                   
                                 </div>
-                                <div class="input-group mb-3">
-                                    <div class="ml-auto col-xl-8 col-lg-8 col-md-8 col-sm-7 pl-0">
-                                        <button type="submit" class="btn btn-primary">Add
-                                        </button>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="name"> Image</label>
+                                    
+                                    <input type="file" accept=".png, .jpg, .jpeg"  id="uploadImage" name="image" class="form-control{{ $errors->has('img') ? ' is-invalid' : '' }} style="display:none;" / required >
+                                   
                                 </div>
-                            
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-12 mx-auto mb-4">
-                            <div class="tm-product-img-dummy mx-auto">
-                                <i class="fas fa-5x fa-cloud-upload-alt" onclick="document.getElementById('fileInput').click();"></i>
-                            </div>
-                            <div class="custom-file mt-3 mb-3">
-                                <!-- <input id="fileInput" name="img" type="file" style="display:none;" /> -->
-                                <input type="file" accept=".png, .jpg, .jpeg"  id="uploadImage" name="image" class="form-control{{ $errors->has('img') ? ' is-invalid' : '' }} style="display:none;" / required >
-                             <!-- <input type="button" class="btn btn-primary d-block mx-auto" value="Upload ..." onclick="document.getElementById('fileInput').click();"> -->
                                 
-                             <button type="submit" class="btn btn-primary" value="Upload ..." onclick="document.getElementById('fileInput').click();">
-                            </div>
+                                <div class="form-group">
+                                    <label for="name"> Stroke</label>
+                                    
+                                    <input type="text" placeholder="Enter Product Stroke"id="Stroke" value="{{$product->stroke}}" name="stroke" type="text" class="form-control validate">
+                                   
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-sm-4">
+                                        <button type="submit" class="btn btn-primary">Update
+                                        </button> <br> <br>
+                                       
+                                    </div>
+                                 
+                                </div>
+
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        </form>
-
-    
-        <footer class="row tm-mt-big">
-            <div class="col-12 font-weight-light">
-                <p class="d-inline-block tm-bg-black text-white py-2 px-4">
-                    Copyright &copy; 2019 Admin Dashboard . Created by|Asmita Adhikari
-                    <a rel="nofollow" href="https://www.tooplate.com" class="text-white tm-footer-link"></a>
-                </p>
+            <div class="tm-col tm-col-small">
+                <div class="bg-black tm-block">
+                   
+                    </div>
+                </div>
             </div>
-        </footer>
-    </div>
-
-    
-
-    <script src="Admin/js/jquery-3.3.1.min.js"></script>
-    <!-- https://jquery.com/download/ -->
-    <script src="Admin/jquery-ui-datepicker/jquery-ui.min.js"></script>
-    <!-- https://jqueryui.com/download/ -->
-    <script src="Admin/js/bootstrap.min.js"></script>
-    <!-- https://getbootstrap.com/ -->
-    <script>
-        $(function () {
-            $('#expire_date').datepicker();
-        });
-    </script>
-</body>
-
-</html>
+        </div>
